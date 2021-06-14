@@ -37,7 +37,7 @@ function Navigation() {
               </Link>
             </li>
           </ul>
-          {/* {button && <Button buttonStyle="btn--outline">Sign up</Button>} */}
+          {button && <Button buttonStyle="btn--outline" type="button" onClick={closeMenu}>Sign up</Button>}
         </div>
       </nav>
     </>
