@@ -1,0 +1,29 @@
+.home {
+  margin: 4rem auto;
+  text-align: center;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+}
+.profile.rounded-corners {
+  border-radius: 50px;
+
+}
+
+.intro {
+    text-align: center;
+}
+
+
+.profile.rounded-corners:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:350px;
+    height:auto;
+    display:block;
+    z-index:999;
+  transition: all 0.1s ease;
+
+}
