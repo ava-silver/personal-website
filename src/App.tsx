@@ -18,7 +18,7 @@ function App() {
           <Route path="/contact" exact component={Contact} />
         </Switch>
         <Footer />
-      </Router>
+      </Router> 
     </div>
   );
 }

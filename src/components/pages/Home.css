@@ -3,27 +3,18 @@
   text-align: center;
 }
 .content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 3rem;
+    
 }
 .profile.rounded-corners {
   border-radius: 50px;
-
+  justify-self: right;
 }
 
 .intro {
     text-align: center;
-}
-
-
-.profile.rounded-corners:hover {
-    position:relative;
-    top:-25px;
-    left:-35px;
-    width:350px;
-    height:auto;
-    display:block;
-    z-index:999;
-  transition: all 0.1s ease;
-
+    justify-self: left;
 }
