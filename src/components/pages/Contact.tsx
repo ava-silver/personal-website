@@ -23,12 +23,12 @@ function Contact() {
       </a>
       <p className="name">Email:</p>
       <a
-        href="mailto: avapsilver@gmail.com"
+        href="mailto: silver.ava@northeastern.edu"
         target="_blank"
         rel="noopener noreferrer"
         className="url"
       >
-        <p>avapsilver@gmail.com</p>
+        <p>silver.ava@northeastern.edu</p>
       </a>
     </div>
   );

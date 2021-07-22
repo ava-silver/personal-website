@@ -20,7 +20,7 @@ function Footer() {
           <i className="fab fa-linkedin"/>
         </a>
         <a
-          href="mailto: avapsilver@gmail.com"
+          href="mailto: silver.ava@northeastern.edu"
           target="_blank"
           rel="noopener noreferrer"
         >
