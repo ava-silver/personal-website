@@ -19,7 +19,7 @@ function AboutMe() {
       <p className="section">
         <span>
           I'm interested in Application and Web Development, although I'm open
-          to all kinds of development work. See my{" "}
+          to all kinds of software development work. See my{" "}
         </span>
         <a
           href="https://www.linkedin.com/in/ava-silver/"
