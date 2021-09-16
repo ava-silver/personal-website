@@ -1,0 +1,68 @@
+:root {
+  --header-height: 4rem;
+  --button-size: calc(var(--header-height) * 0.65);
+  --icon-size: calc(var(--button-size) * 0.75);
+  --margin: 1rem;
+  --margin-secondary: calc(var(--margin) * 0.5);
+}
+
+.header {
+  /* Header Background */
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: var(--header-height);
+  left: 0px;
+  top: 0px;
+
+  display: flex;
+  flex-direction: row;
+
+  /* Header Background */
+
+  background: linear-gradient(90.62deg, #5c0088 0%, #8600c5 100%);
+}
+
+.logo-container {
+  margin: var(--margin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spacer {
+  flex-grow: 10;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--margin);
+}
+
+.button {
+  /* Button */
+  width: var(--button-size);
+  height: var(--button-size);
+  background: linear-gradient(135deg, #9d2fc5 0%, #d357ff 100%);
+  border-radius: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--margin-secondary);
+  transition: transform 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.15);
+}
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.logo {
+  width: var(--button-size);
+  height: var(--button-size);
+  margin: var(--margin-secondary);
+}
