@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+
+:root {
+  --header-background-color: linear-gradient(
+    90.62deg,
+    #5c0088 0%,
+    #8600c5 100%
+  );
+  --content-color: rgb(239, 221, 255);
+  --hover-tint-color: rgba(255, 255, 255, 0.4);
+  --header-color: #ebb4ff;
+  --font: "Noto Sans KR", sans-serif;
+  --background-color: #17002a;
+}
+
 .app {
   display: flex;
   flex-direction: column;

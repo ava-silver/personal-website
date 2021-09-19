@@ -1,9 +1,10 @@
 :root {
-  --header-height: 4rem;
+  --header-height: 6rem;
   --button-size: calc(var(--header-height) * 0.65);
   --icon-size: calc(var(--button-size) * 0.75);
   --margin: 1rem;
   --margin-secondary: calc(var(--margin) * 0.5);
+  --name-height: calc(var(--header-height) / 2);
 }
 
 .header {
@@ -20,7 +21,7 @@
 
   /* Header Background */
 
-  background: linear-gradient(90.62deg, #5c0088 0%, #8600c5 100%);
+  background: var(--header-background-color);
 }
 
 .logo-container {
@@ -43,17 +44,17 @@
   /* Button */
   width: var(--button-size);
   height: var(--button-size);
-  background: linear-gradient(135deg, #9d2fc5 0%, #d357ff 100%);
   border-radius: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: var(--margin-secondary);
-  transition: transform 0.3s;
+  transition: 0.5s;
 }
 
 .button:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
+  background: var(--hover-tint-color);
 }
 
 .icon {
@@ -64,5 +65,13 @@
 .logo {
   width: var(--button-size);
   height: var(--button-size);
+  margin: var(--margin-secondary);
+}
+
+.name {
+  font-family: var(--font);
+  font-size: var(--name-height);
+  font-weight: bold;
+  color: var(--header-color);
   margin: var(--margin-secondary);
 }

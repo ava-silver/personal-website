@@ -1,16 +1,16 @@
 import React from "react";
 import "./Header.css";
-import logoheader from "../icons/logoheader.svg";
-import mail from "../icons/mail.svg";
-import github from "../icons/github.svg";
-import linkedin from "../icons/linkedin.svg";
+import logo from "./icons/logo-header.svg";
+import mail from "./icons/mail-header.svg";
+import github from "./icons/github-header.svg";
+import linkedin from "./icons/linkedin-header.svg";
 
 function Header() {
   return (
     <div className="header">
       <div className="logo-container">
-        <img src={logoheader} className="logo" alt="logo" />
-        <h1>Ava Silver</h1>
+        <img src={logo} className="logo" alt="logo" />
+        <div className="name">Ava Silver</div>
       </div>
       <div className="spacer" />
       <div className="socials">
