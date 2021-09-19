@@ -46,6 +46,7 @@
 
   transition: 0.5s;
   border-radius: 1.5rem;
+  color: var(--content-color);
 }
 
 .resource:hover {
