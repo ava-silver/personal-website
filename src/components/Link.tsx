@@ -1,4 +1,3 @@
-import Color from "color";
 import { FC } from "react";
 
 interface LinkProps {

@@ -1,4 +1,3 @@
-import React, { FC } from "react";
 import "./Content.css";
 import Link from "./Link";
 import resume_svg from "./icons/resume-content.svg";
@@ -118,6 +117,7 @@ function Footer() {
   );
 }
 
+/*
 function Paragraph3() {
   return (
     <p>
@@ -134,5 +134,6 @@ function Paragraph3() {
     </p>
   );
 }
+*/
 
 export default Content;
