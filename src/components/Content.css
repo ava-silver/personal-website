@@ -3,14 +3,13 @@
   --img-size: calc(5 * var(--content-size));
   --img-margin: calc(2 * var(--content-size));
   --resource-size: calc(1.5 * var(--img-size));
-  --background-length: auto;
 }
 
 .content {
   /* Background */
   position: absolute;
-  width: 100%;
-  height: var(--background-length);
+  width: var(--width);
+  height: var(--height);
   left: 0px;
   top: var(--header-height);
   z-index: 0;

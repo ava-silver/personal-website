@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
 
 :root {
+  --width: device-width;
+  --height: auto;
   --header-background-color: linear-gradient(
     90.62deg,
     #5c0088 0%,
