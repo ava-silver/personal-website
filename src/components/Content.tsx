@@ -111,7 +111,7 @@ function GitHub() {
 function Footer() {
 	return (
 		<div className='footer'>
-			<span>Ava Silver 2021</span>
+			<span>Ava Silver 2022</span>
 			<span>
 				<Link href='mailto:silver.ava@northeastern.edu' plain>
 					silver.ava@northeastern.edu
