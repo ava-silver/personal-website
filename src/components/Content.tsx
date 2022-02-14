@@ -113,8 +113,8 @@ function Footer() {
 		<div className='footer'>
 			<span>Ava Silver 2022</span>
 			<span>
-				<Link href='mailto:silver.ava@northeastern.edu' plain>
-					silver.ava@northeastern.edu
+				<Link href='mailto:avapsilver@gmail.com' plain>
+					avapsilver@gmail.com
 				</Link>
 			</span>
 		</div>
