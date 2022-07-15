@@ -22,8 +22,8 @@ function Intro() {
 	return (
 		<p>
 			Hi there! I'm Ava Silver (
-			<Link href='https://pronoun.is/she?or=they'>
-				<span className='trans'>she/they</span>
+			<Link href='https://pronoun.is/she'>
+				<span className='trans'>she/her</span>
 			</Link>
 			), and I'm a third-year student at Northeastern University studying
 			Computer Science and Software Engineering.
