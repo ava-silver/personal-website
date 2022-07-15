@@ -25,7 +25,7 @@ function Intro() {
 			<Link href='https://pronoun.is/she'>
 				<span className='trans'>she/her</span>
 			</Link>
-			), and I'm a third-year student at Northeastern University studying
+			), and I'm a rising senior at Northeastern University studying
 			Computer Science and Software Engineering.
 		</p>
 	);
@@ -40,20 +40,36 @@ function Goals() {
 	);
 }
 
+function CompanyIcon({ src, alt }: { src: string; alt: string }) {
+	return <img src={src} alt={alt} width='40' height='40' style={{ borderRadius: '10px', verticalAlign: 'middle' }} />
+}
+
+function CompanyLink({ name, href, iconSrc }: { name: string, href: string, iconSrc: string }) {
+	return (
+		<Link href={href} plain>
+			{/* <div style={{ justifyContent: 'center', alignItems: 'center' }}> */}
+			{name + ' '}
+			(<CompanyIcon src={iconSrc} alt={`${name} Icon`} />)
+			{/* </div> */}
+		</Link>
+	);
+}
+
 function Work() {
 	return (
 		<p>
 			I'm currently a Software Engineering Intern at{' '}
-			<Link href='https://www.datadoghq.com/' plain>
-				Datadog
-			</Link>{' '}
-			on the Azure Integrations working primarily with Python. Previously, I
-			have worked as a Lead Teaching Assistant for Fundamentals of Computer
-			Science 1 Accelerated at Northeastern University, as well as a previous a
-			Co-op/Internship at{' '}
-			<Link href='https://www.bose.com/' plain>
-				Bose
-			</Link>{' '}
+			<CompanyLink name='Microsoft Azure' href='https://azure.microsoft.com' iconSrc='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/260px-Microsoft_Azure.svg.png' />{' '}
+			working on the Software Load Balancer (SLB) Buildout team of Azure Core.
+			Through this experience, I've been diving into cloud computing and learning
+			the ins and outs of cloud infrastructure.<br />
+			Ealier this spring, I had my second Co-op at{' '}
+			<CompanyLink name='Datadog' href='https://www.datadoghq.com/' iconSrc='https://imgix.datadoghq.com/img/dd_logo_n_70x75.png' />{' '}
+			on the Azure Integrations working primarily with Python. <br />
+			Previously, I have worked as a Lead Teaching Assistant for Fundamentals of Computer
+			Science 1 Accelerated at Northeastern University, as well as my first
+			Co-op at{' '}
+			<CompanyLink href='https://www.bose.com/' name='Bose' iconSrc='https://static.bose.com/etc/designs/bose/consumer-products-2016/design/images/bose_logo.png' />{' '}
 			doing software engineering in the Automotive Systems Division working with{' '}
 			<Link
 				href='https://source.android.com/devices/automotive/start/what_automotive'
@@ -124,18 +140,18 @@ function Footer() {
 /*
 function Paragraph3() {
   return (
-    <p>
-      <span>
-        I'm primarily interested in Application and Web Development, although
-        I'm open to all kinds of software development work. See my{" "}
-      </span>
-      <Link href="https://www.linkedin.com/in/ava-silver/">Linkedin</Link>
-      <span>, </span>
-      <Link href="Resume.pdf">Resume</Link>
-      <span>, or </span>
-      <Link href="https://github.com/ava-silver">GitHub</Link>
-      <span> for more information on my experience.</span>
-    </p>
+	<p>
+	  <span>
+		I'm primarily interested in Application and Web Development, although
+		I'm open to all kinds of software development work. See my{' '}
+	  </span>
+	  <Link href='https://www.linkedin.com/in/ava-silver/'>Linkedin</Link>
+	  <span>, </span>
+	  <Link href='Resume.pdf'>Resume</Link>
+	  <span>, or </span>
+	  <Link href='https://github.com/ava-silver'>GitHub</Link>
+	  <span> for more information on my experience.</span>
+	</p>
   );
 }
 */
