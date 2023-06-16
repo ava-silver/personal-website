@@ -231,7 +231,13 @@ function EightyEightThirtyOne({
 }) {
   return (
     <a href={href} target="_blank">
-      <Image src={src} alt={alt} height="31px" width="88px" />
+      <Image
+        src={src}
+        alt={alt}
+        height="31px"
+        width="88px"
+        sx={{ imageRendering: 'pixelated' }}
+      />
     </a>
   );
 }
