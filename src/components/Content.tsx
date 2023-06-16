@@ -1,21 +1,53 @@
-import './Content.css';
 import Link from './Link';
 import resume_svg from './icons/resume-content.svg';
 import github_svg from './icons/github-content.svg';
 import linkedin_svg from './icons/linkedin-content.svg';
+import { Center, Divider, Heading, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Card, CardBody } from '@chakra-ui/react';
 
 function Content() {
-	return (
-		<div className='content'>
-			<div className='text'>
-				<Intro />
-				<Goals />
-				<Work />
-			</div>
-			<Resources />
-			<Footer />
-		</div>
-	);
+  return (
+    <Stack m={[3, 8]}>
+      <Card sx={{bg: 'bg.2', color: 'text'}}>
+        <CardBody>
+          {/* <Text>View a summary of all your customers over the last month.</Text> */}
+      <Center>
+        <Heading>ava :3</Heading>
+      </Center>
+        </CardBody>
+      </Card>
+      <Divider />
+      <Tabs>
+        <TabList>
+          <Tab>One</Tab>
+          <Tab>Two</Tab>
+          <Tab>Three</Tab>
+        </TabList>
+
+        <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>three!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+    </Stack>
+  );
+	// return (
+	// 	<div className='content'>
+	// 		<div className='text'>
+	// 			<Intro />
+	// 			<Goals />
+	// 			<Work />
+	// 		</div>
+	// 		<Resources />
+	// 		<Footer />
+	// 	</div>
+	// );
 }
 
 function Intro() {
