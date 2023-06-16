@@ -2,8 +2,10 @@ import logo from './icons/logo-header.svg';
 import resume_svg from './icons/resume-content.svg';
 import github_svg from './icons/github-content.svg';
 import linkedin_svg from './icons/linkedin-content.svg';
+import badges from './88x31s.json';
 import {
   Center,
+  Box,
   Flex,
   Heading,
   Image,
@@ -26,7 +28,7 @@ function Section(props: ComponentProps<'div'>) {
       sx={{
         bg: 'bg.2',
         color: 'text',
-        width: ['100%', '30rem'],
+        width: ['100%', '45rem'],
         height: 'auto',
       }}
     >
@@ -38,28 +40,19 @@ function Section(props: ComponentProps<'div'>) {
 }
 
 function Content() {
-  const header = useMemo(() => (Math.random() < 0.2 ? 'ava :3' : 'ava'), []);
   return (
-    <Stack m={[3, 8]}>
-      <Center>
+    <Stack alignItems="center" m={[3, 8]} gap="1rem">
+      <Box paddingY="1rem">
         <Section>
           <Center gap="1rem">
             <Image src={logo} />
-            <Heading>{header}</Heading>
+            <Heading>ava</Heading>
           </Center>
         </Section>
-      </Center>
-      <Flex
-        direction="row"
-        wrap="wrap"
-        justifyContent="center"
-        gap="1rem"
-        marginTop="1rem"
-      >
-        <Greeting />
-        <Work />
-        <Resources />
-      </Flex>
+      </Box>
+      <Greeting />
+      <Work />
+      <Resources />
       <Oomfies />
       <Spacer />
       <Footer />
@@ -76,6 +69,7 @@ function MinorHeading({ children }: ComponentProps<'h2'>) {
 }
 
 function Greeting() {
+  const cat = useMemo(() => (Math.random() < 0.4 ? ':3' : ''), []);
   return (
     <Section>
       <MinorHeading>hiya there!</MinorHeading>
@@ -84,7 +78,7 @@ function Greeting() {
         <a href="https://pronoun.is/she">
           <span className="trans">she/her</span>
         </a>
-        ). welcome to my corner of the internet!
+        ). welcome to my corner of the internet! {cat}
       </BodyText>
     </Section>
   );
@@ -226,24 +220,41 @@ function Resources() {
   );
 }
 
+function EightyEightThirtyOne({
+  src,
+  href,
+  alt,
+}: {
+  src: string;
+  href: string;
+  alt: string;
+}) {
+  return (
+    <a href={href} target="_blank">
+      <Image src={src} alt={alt} height="31px" width="88px" />
+    </a>
+  );
+}
+
 function Oomfies() {
   return (
-    <Center>
-      <Section>hiiii</Section>
-    </Center>
+    <Section>
+      <Flex wrap="wrap" gap="1rem" justifyContent="center" alignItems="center">
+        {badges.map(({ name, image, url }) => (
+          <EightyEightThirtyOne src={image} href={url} alt={name} />
+        ))}
+      </Flex>
+    </Section>
   );
 }
 
 function Footer() {
   return (
-    <Center>
-      <Spacer />
+    <Center gap="2rem">
       <Text>Ava Silver {new Date().getFullYear()}</Text>
-      <Spacer />
       <a href="mailto:ava@avasilver.dev" target="_blank">
         ava@avasilver.dev
       </a>
-      <Spacer />
     </Center>
   );
 }

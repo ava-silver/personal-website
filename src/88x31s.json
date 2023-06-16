@@ -1,0 +1,27 @@
+[
+  {
+    "name": "ava silver",
+    "image": "/badges/ava.png",
+    "url": "https://avasilver.dev/"
+  },
+  {
+    "name": "breq (brooke chalmers)",
+    "image": "/badges/breq.png",
+    "url": "https://breq.dev/"
+  },
+  {
+    "name": "vivi (vivian hafener)",
+    "image": "/badges/vivi.png",
+    "url": "https://www.vhafener.com/"
+  },
+  {
+    "name": "flaming_spork (philomena)",
+    "image": "/badges/philo.png",
+    "url": "https://philo.gay/"
+  },
+  {
+    "name": "eggy (ezgi bas)",
+    "image": "/badges/eggy.png",
+    "url": "https://twitter.com/ezgiburglar69/"
+  }
+]
