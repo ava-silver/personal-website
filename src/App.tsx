@@ -1,53 +1,33 @@
-import React from "react";
-import Header from "./components/Header";
-import Content from "./components/Content";
-import { ChakraProvider, extendTheme, defineStyleConfig, type ThemeConfig } from '@chakra-ui/react'
-
-const config: ThemeConfig = {
-    initialColorMode: 'dark',
-    useSystemColorMode: false,
-};
-
+import Content from './Content';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
-    body: "Comfortaa, system-ui, sans-serif",
-    heading: "Comfortaa, system-ui, sans-serif",
+    body: 'Comfortaa, system-ui, sans-serif',
+    heading: 'Comfortaa, system-ui, sans-serif',
   },
   colors: {
     bg: {
       1: '#17002a',
-      2: '#2a004d'
+      2: '#2a004d',
     },
-    text: '#efddff'
+    text: '#efddff',
   },
   fontSizes: {
-    xs: "1rem",
-    sm: "1.5rem",
-    md: "2rem",
-    lg: "2.5rem",
-    xl: "3rem",
-    "2xl": "3.5rem",
-    "3xl": "4rem",
-    "4xl": "4.5rem",
-    "5xl": "5rem",
-    "6xl": "5.5rem",
-    "7xl": "6rem",
-    "8xl": "6.5rem",
-    "9xl": "7rem",
+    xs: '1rem',
+    sm: '1.5rem',
+    md: '2rem',
+    lg: '2.5rem',
+    xl: '3rem',
+    '2xl': '3.5rem',
+    '3xl': '4rem',
+    '4xl': '4.5rem',
+    '5xl': '5rem',
+    '6xl': '5.5rem',
+    '7xl': '6rem',
+    '8xl': '6.5rem',
+    '9xl': '7rem',
   },
-  // components: {
-  //   Card: defineStyleConfig({
-  //     baseStyle: {
-  //       display: 'flex',
-  //       flexDirection: 'column',
-  //       background: '#2a004d',
-  //       color: '#efddff',
-  //       alignItems: 'center',
-  //       gap: 6,
-  //     },
-  //   })
-  // },
   styles: {
     global: {
       body: {
@@ -74,8 +54,8 @@ const theme = extendTheme({
         '-webkit-text-fill-color': 'transparent',
       },
       a: {
-        'text-decoration': 'none'
-      }
+        'text-decoration': 'none',
+      },
     },
   },
 });
@@ -83,7 +63,6 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      {/* <Header /> */}
       <Content />
     </ChakraProvider>
   );
