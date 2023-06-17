@@ -261,6 +261,11 @@ function Footer() {
       <a href="mailto:ava@avasilver.dev" target="_blank">
         ava@avasilver.dev
       </a>
+      <Resource
+        name="source code"
+        href="https://github.com/ava-silver/personal-website/"
+        src={github_svg}
+      />
     </Center>
   );
 }
