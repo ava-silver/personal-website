@@ -56,6 +56,18 @@ const theme = extendTheme({
       a: {
         'text-decoration': 'none',
       },
+      '.clickable': {
+        padding: '5px',
+        display: 'inline-block',
+        position: 'relative',
+        transition: 'transform 0.4s ease-in-out',
+      },
+      '.clickable:hover': {
+        transform: 'scale(1.05)',
+        'background-color':
+          'rgba(255, 255, 255, 0.1)' /* Adjust the opacity (0.5) as desired */,
+        'border-radius': '10px' /* Add rounded corners if needed */,
+      },
     },
   },
 });

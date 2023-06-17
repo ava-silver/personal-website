@@ -191,7 +191,7 @@ function Resource({
   href: string;
 }) {
   return (
-    <a href={href} target="_blank">
+    <a href={href} target="_blank" className="clickable">
       <Center flexDir="column">
         <Text>{name}</Text>
         <Image src={src} alt={name} />
@@ -258,7 +258,7 @@ function Footer() {
   return (
     <Center gap="2rem">
       <Text>Ava Silver {new Date().getFullYear()}</Text>
-      <a href="mailto:ava@avasilver.dev" target="_blank">
+      <a href="mailto:ava@avasilver.dev" target="_blank" className="clickable">
         ava@avasilver.dev
       </a>
       <Resource
