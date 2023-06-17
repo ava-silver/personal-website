@@ -1,8 +1,8 @@
 {
   "homepage": "https://avasilver.dev/",
   "name": "personal-website",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "dependencies": {
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.1",
