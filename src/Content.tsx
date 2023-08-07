@@ -204,7 +204,7 @@ function Resources() {
   return (
     <Section>
       <Center gap="2rem">
-        <Resource name="Resume" href="Resume.pdf" src={resume_svg} />
+        <Resource name="Resume" href="resume.pdf" src={resume_svg} />
         <Resource
           name="LinkedIn"
           href="https://www.linkedin.com/in/ava-silver/"
