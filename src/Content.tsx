@@ -74,7 +74,7 @@ function Greeting() {
     <Section>
       <MinorHeading>hiya there!</MinorHeading>
       <BodyText>
-        i'm ava silver <span className="trans">she/her</span>. welcome to my
+        i'm ava silver (<span className="trans">she/her</span>). welcome to my
         corner of the internet! {cat}
       </BodyText>
     </Section>
