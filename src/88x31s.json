@@ -1,33 +1,38 @@
 [
   {
     "name": "ava silver",
-    "image": "/badges/ava.png",
+    "image": "ava.png",
     "url": "https://avasilver.dev/"
   },
   {
     "name": "breq (brooke chalmers)",
-    "image": "/badges/breq.png",
-    "alt": "/badges/breqalt.png",
+    "image": "breq.png",
+    "alt": "breqalt.png",
     "url": "https://breq.dev/"
   },
   {
     "name": "vivi (vivian hafener)",
-    "image": "/badges/vivi.png",
+    "image": "vivi.png",
     "url": "https://www.vhafener.com/"
   },
   {
+    "name": "prismaticwolf (maxine vollertsen)",
+    "image": "maxine.png",
+    "url": "https://prsmaticwolf.itch.io/"
+  },
+  {
     "name": "tris (tris wilson)",
-    "image": "/badges/tris.png",
+    "image": "tris.png",
     "url": "https://tris.fyi/"
   },
   {
     "name": "flaming_spork (philomena)",
-    "image": "/badges/philo.png",
+    "image": "philo.png",
     "url": "https://philo.gay/"
   },
   {
     "name": "eggy (ezgi bas)",
-    "image": "/badges/eggy.png",
+    "image": "eggy.png",
     "url": "https://twitter.com/ezgiburglar69/"
   }
 ]

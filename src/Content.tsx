@@ -28,7 +28,7 @@ function Section(props: ComponentProps<'div'>) {
       sx={{
         bg: 'bg.2',
         color: 'text',
-        width: ['100%', '45rem'],
+        width: ['100%', '90%', '40rem'],
         height: 'auto',
       }}
     >
@@ -229,7 +229,7 @@ function EightyEightThirtyOne({
   return (
     <a href={href} target="_blank">
       <Image
-        src={src}
+        src={'/badges/' + src}
         alt={alt}
         height="31px"
         width="88px"
