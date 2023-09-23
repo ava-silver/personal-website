@@ -7,12 +7,18 @@
   {
     "name": "breq (brooke chalmers)",
     "image": "/badges/breq.png",
+    "alt": "/badges/breqalt.png",
     "url": "https://breq.dev/"
   },
   {
     "name": "vivi (vivian hafener)",
     "image": "/badges/vivi.png",
     "url": "https://www.vhafener.com/"
+  },
+  {
+    "name": "tris (tris wilson)",
+    "image": "/badges/tris.png",
+    "url": "https://tris.fyi/"
   },
   {
     "name": "flaming_spork (philomena)",

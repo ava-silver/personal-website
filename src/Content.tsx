@@ -243,11 +243,16 @@ function EightyEightThirtyOne({
 }
 
 function Oomfies() {
+  const useAlt = useMemo(() => Math.random() < 0.1, []);
   return (
     <Section>
       <Flex wrap="wrap" gap="1rem" justifyContent="center" alignItems="center">
-        {badges.map(({ name, image, url }) => (
-          <EightyEightThirtyOne src={image} href={url} alt={name} />
+        {badges.map(({ name, image, url, alt }) => (
+          <EightyEightThirtyOne
+            src={(useAlt && alt) || image}
+            href={url}
+            alt={name}
+          />
         ))}
       </Flex>
     </Section>
