@@ -74,11 +74,8 @@ function Greeting() {
     <Section>
       <MinorHeading>hiya there!</MinorHeading>
       <BodyText>
-        i'm ava silver (
-        <a href="https://pronoun.is/she">
-          <span className="trans">she/her</span>
-        </a>
-        ). welcome to my corner of the internet! {cat}
+        i'm ava silver <span className="trans">she/her</span>. welcome to my
+        corner of the internet! {cat}
       </BodyText>
     </Section>
   );
