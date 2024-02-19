@@ -11,14 +11,19 @@
     "url": "https://breq.dev/"
   },
   {
-    "name": "vivi (vivian hafener)",
-    "image": "vivi.png",
-    "url": "https://www.vhafener.com/"
+    "name": "mia kiesman",
+    "image": "mia.png",
+    "url": "https://miakizz.quest/"
   },
   {
     "name": "prismaticwolf (maxine vollertsen)",
     "image": "maxine.png",
     "url": "https://prsmaticwolf.itch.io/"
+  },
+  {
+    "name": "ari",
+    "image": "adryd.png",
+    "url": "https://adryd.com/"
   },
   {
     "name": "tris (tris wilson)",
@@ -31,9 +36,9 @@
     "url": "https://philo.gay/"
   },
   {
-    "name": "ari",
-    "image": "adryd.png",
-    "url": "https://adryd.com/"
+    "name": "vivi (vivian hafener)",
+    "image": "vivi.png",
+    "url": "https://www.vhafener.com/"
   },
   {
     "name": "eggy (ezgi bas)",
