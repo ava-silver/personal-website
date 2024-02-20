@@ -48,13 +48,13 @@ const theme = extendTheme({
           #55cdfc 87%,
           #55cdfc 100%
         )`,
-        'font-weight': 600,
-        '-webkit-background-clip': 'text',
-        'background-clip': 'text',
-        '-webkit-text-fill-color': 'transparent',
+        fontWeight: 600,
+        WebkitBackgroundClip: 'text',
+        backgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
       },
       a: {
-        'text-decoration': 'none',
+        textDecoration: 'none',
       },
       '.clickable': {
         padding: '5px',

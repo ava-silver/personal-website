@@ -101,8 +101,9 @@ function WorkExperience({
               height="40px"
               width="40px"
               sx={{
-                borderRadius: '10px',
+                borderRadius: '5px',
                 verticalAlign: 'middle',
+                backgroundColor: 'white',
               }}
             />
             {name}
@@ -121,53 +122,31 @@ function Work() {
     <Section>
       <MinorHeading>work experience:</MinorHeading>
       <Accordion allowToggle marginTop="1rem">
-        <WorkExperience
-          name="Datadog"
-          icon="https://imgix.datadoghq.com/img/dd_logo_n_70x75.png"
-        >
+        <WorkExperience name="Datadog" icon="/logos/datadog.png">
           I'm currently a Software Engineer at{' '}
-          <a href="https://www.datadoghq.com/" target="_blank">
-            Datadog
-          </a>{' '}
-          on the Azure Integrations team. I worked here as my second co-op
-          (2022), as well as part time during my last semester at Northeastern
-          University. I work primarily as a backend developer using Python,
-          Kubernetes, and large scale microservice architecture.
+          <a href="https://www.datadoghq.com/">Datadog</a> on the Azure
+          Integrations team. I worked here as my second co-op (2022), as well as
+          part time during my last semester at Northeastern University. I work
+          primarily as a backend developer using Python, Kubernetes, and large
+          scale microservice architecture.
         </WorkExperience>
-        <WorkExperience
-          name="Azure"
-          icon="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/260px-Microsoft_Azure.svg.png"
-        >
+        <WorkExperience name="Azure" icon="/logos/azure.png">
           During my third co-op, I worked at{' '}
-          <a href="https://azure.microsoft.com" target="_blank">
-            Microsoft Azure
-          </a>{' '}
-          on the Software Load Balancer (SLB) Buildout team of Azure Core. Here
-          I worked primarily with C# and helped develop internal tooling for
-          core Azure infrastructure.
+          <a href="https://azure.microsoft.com">Microsoft Azure</a> on the
+          Software Load Balancer (SLB) Buildout team of Azure Core. Here I
+          worked primarily with C# and helped develop internal tooling for core
+          Azure infrastructure.
         </WorkExperience>
-        <WorkExperience
-          name="Bose"
-          icon="https://static.bose.com/etc/designs/bose/consumer-products-2016/design/images/bose_logo.png"
-        >
+        <WorkExperience name="Bose" icon="/logos/bose.png">
           During my first co-op, I worked at{' '}
-          <a href="https://www.bose.com/" target="_blank">
-            Bose
-          </a>{' '}
-          in the Automotive Systems Division working on Android app development
-          and OS extensions for{' '}
-          <a
-            href="https://source.android.com/devices/automotive/start/what_automotive"
-            target="_blank"
-          >
+          <a href="https://www.bose.com/">Bose</a> in the Automotive Systems
+          Division working on Android app development and OS extensions for{' '}
+          <a href="https://source.android.com/devices/automotive/start/what_automotive">
             Android Automotive
           </a>
           .
         </WorkExperience>
-        <WorkExperience
-          name="NEU"
-          icon="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Northeastern_seal.svg/1200px-Northeastern_seal.svg.png"
-        >
+        <WorkExperience name="NEU" icon="/logos/northeastern.png">
           During my time at Northeastern Univeristy studing computer science, I
           was a Teaching Assistant for Algorithms & Data Structures, and
           Fundamentals of Computer Science 1 Accelerated (where I also worked a
@@ -188,7 +167,7 @@ function Resource({
   href: string;
 }) {
   return (
-    <a href={href} target="_blank" className="clickable">
+    <a href={href} className="clickable">
       <Center flexDir="column">
         <Text>{name}</Text>
         <Image src={src} alt={name} />
@@ -227,7 +206,7 @@ function EightyEightThirtyOne({
   alt: string;
 }) {
   return (
-    <a href={href} target="_blank">
+    <a href={href}>
       <Image
         src={'/badges/' + src}
         alt={alt}
@@ -260,7 +239,7 @@ function Footer() {
   return (
     <Center gap="2rem">
       <Text>Ava Silver {new Date().getFullYear()}</Text>
-      <a href="mailto:ava@avasilver.dev" target="_blank" className="clickable">
+      <a href="mailto:ava@avasilver.dev" className="clickable">
         ava@avasilver.dev
       </a>
       <Resource
