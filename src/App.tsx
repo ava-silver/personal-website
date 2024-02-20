@@ -64,9 +64,9 @@ const theme = extendTheme({
       },
       '.clickable:hover': {
         transform: 'scale(1.05)',
-        'background-color':
+        backgroundColor:
           'rgba(255, 255, 255, 0.1)' /* Adjust the opacity (0.5) as desired */,
-        'border-radius': '10px' /* Add rounded corners if needed */,
+        borderRadius: '10px' /* Add rounded corners if needed */,
       },
     },
   },

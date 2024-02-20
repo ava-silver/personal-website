@@ -228,6 +228,7 @@ function Oomfies() {
             src={(useAlt && alt) || image}
             href={url}
             alt={name}
+            key={name}
           />
         ))}
       </Flex>
