@@ -95,17 +95,14 @@ function WorkExperience({
       <h2>
         <AccordionButton>
           <Center flexDir="row" gap="1rem">
-            <Image
-              src={icon}
-              alt={`${name} Icon`}
-              height="40px"
-              width="40px"
-              sx={{
-                borderRadius: '5px',
-                verticalAlign: 'middle',
-                backgroundColor: 'white',
-              }}
-            />
+            <Center
+              width="45px"
+              height="45px"
+              borderRadius="5px"
+              backgroundColor="white"
+            >
+              <Image src={icon} alt={`${name} Icon`} maxW="40px" maxH="40px" />
+            </Center>
             {name}
           </Center>
           <Spacer />
