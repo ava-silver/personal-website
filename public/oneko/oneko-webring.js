@@ -28,6 +28,7 @@
     'kibty.town',
     'avasilver.dev',
     'tris.fyi',
+    'breq.dev',
   ];
 
   try {
