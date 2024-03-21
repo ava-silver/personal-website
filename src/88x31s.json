@@ -1,22 +1,22 @@
 [
   {
-    "name": "ava silver",
+    "name": "ava",
     "image": "ava.png",
     "url": "https://avasilver.dev/"
   },
   {
-    "name": "breq (brooke chalmers)",
+    "name": "breq",
     "image": "breq.png",
     "alt": "breqalt.png",
     "url": "https://breq.dev/"
   },
   {
-    "name": "mia kiesman",
+    "name": "mia",
     "image": "mia.png",
     "url": "https://miakizz.quest/"
   },
   {
-    "name": "prismaticwolf (maxine vollertsen)",
+    "name": "maxine",
     "image": "maxine.png",
     "url": "https://prsmaticwolf.itch.io/"
   },
@@ -26,22 +26,27 @@
     "url": "https://adryd.com/"
   },
   {
-    "name": "tris (tris wilson)",
+    "name": "tris",
     "image": "tris.png",
     "url": "https://tris.fyi/"
   },
   {
-    "name": "flaming_spork (philomena)",
+    "name": "philo",
     "image": "philo.png",
     "url": "https://philo.gay/"
   },
   {
-    "name": "vivi (vivian hafener)",
+    "name": "julia",
+    "image": "julia.png",
+    "url": "https://juliaviolet.dev/"
+  },
+  {
+    "name": "vivi",
     "image": "vivi.png",
     "url": "https://www.vhafener.com/"
   },
   {
-    "name": "eggy (ezgi bas)",
+    "name": "ezgi",
     "image": "eggy.png",
     "url": "https://twitter.com/ezgiburglar69/"
   }
