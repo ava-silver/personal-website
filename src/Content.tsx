@@ -1,4 +1,3 @@
-import logo from './icons/logo-header.svg';
 import resume_svg from './icons/resume-content.svg';
 import github_svg from './icons/github-content.svg';
 import linkedin_svg from './icons/linkedin-content.svg';
@@ -19,6 +18,7 @@ import {
   AccordionPanel,
   Spacer,
   AccordionIcon,
+  useMediaQuery,
 } from '@chakra-ui/react';
 import { ComponentProps, useMemo } from 'react';
 
@@ -40,13 +40,14 @@ function Section(props: ComponentProps<'div'>) {
 }
 
 function Content() {
+  const [isMobile] = useMediaQuery('(max-width: 768px)');
   return (
     <Stack alignItems="center" m={[3, 8]} gap="1rem">
       <Box paddingY="1rem">
         <Section>
           <Center gap="1rem">
-            <Image src={logo} />
-            <Heading>ava</Heading>
+            <Image src="/logo.svg" h="5rem" />
+            <Heading>ava {!isMobile && 'silver'}</Heading>
           </Center>
         </Section>
       </Box>
