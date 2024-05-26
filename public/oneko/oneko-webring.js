@@ -29,6 +29,7 @@
     'avasilver.dev',
     'tris.fyi',
     'breq.dev',
+    'juliaviolet.dev',
   ];
 
   try {
