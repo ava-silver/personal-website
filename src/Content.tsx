@@ -144,7 +144,7 @@ function Work() {
           </a>
           .
         </WorkExperience>
-        <WorkExperience name="Northeastern" icon="/logos/northeastern.png">
+        <WorkExperience name="Northeastern" icon="/logos/northeastern.webp">
           During my time at Northeastern Univeristy studing computer science, I
           was a Teaching Assistant for Algorithms & Data Structures, and
           Fundamentals of Computer Science 1 Accelerated (where I also worked a
