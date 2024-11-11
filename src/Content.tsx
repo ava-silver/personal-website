@@ -27,7 +27,7 @@ function Section(props: ComponentProps<'div'>) {
     <Card
       sx={{
         bg: 'bg.2',
-        color: 'text',
+        color: 'textColor',
         width: ['100%', '90%', '40rem'],
         height: 'auto',
       }}
@@ -75,8 +75,8 @@ function Greeting() {
     <Section>
       <MinorHeading>hiya there!</MinorHeading>
       <BodyText>
-        i'm ava silver (<span className="trans">she/her</span>). welcome to my
-        corner of the internet! {cat}
+        i'm ava silver (<span className="pronouns">she/her</span>
+        ). welcome to my corner of the internet! {cat}
       </BodyText>
     </Section>
   );

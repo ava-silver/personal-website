@@ -11,7 +11,7 @@ const theme = extendTheme({
       1: '#17002a',
       2: '#2a004d',
     },
-    text: '#efddff',
+    textColor: '#efddff',
   },
   fontSizes: {
     xs: '1rem',
@@ -31,27 +31,35 @@ const theme = extendTheme({
   styles: {
     global: {
       body: {
-        color: 'text',
+        color: 'textColor',
+        fontWeight: 600,
         bg: 'bg.1',
       },
-      '.trans': {
+      '.pronouns': {
         background: `linear-gradient(
           90deg,
-          #55cdfc 0%,
-          #55cdfc 12%,
-          #f7a8b8 22%,
-          #f7a8b8 35%,
-          #ffffff 45%,
-          #ffffff 55%,
-          #f7a8b8 65%,
-          #f7a8b8 77%,
-          #55cdfc 87%,
+          #efddff 0%,
+          #efddff 49.9%,
+          #55cdfc 50%,
+          #55cdfc 56%,
+          #f7a8b8 61%,
+          #f7a8b8 67.5%,
+          #ffffff 72.5%,
+          #ffffff 77.5%,
+          #f7a8b8 82.5%,
+          #f7a8b8 88.5%,
+          #55cdfc 93.5%,
           #55cdfc 100%
         )`,
-        fontWeight: 600,
         WebkitBackgroundClip: 'text',
         backgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '200% 100%',
+        transition: 'background-position 1s ease-in-out',
+      },
+      '.pronouns:hover': {
+        backgroundPosition: '100%',
       },
       a: {
         textDecoration: 'none',
