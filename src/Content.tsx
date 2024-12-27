@@ -121,12 +121,11 @@ function Work() {
       <MinorHeading>work experience:</MinorHeading>
       <Accordion allowToggle marginTop="1rem">
         <WorkExperience name="Datadog" icon="/logos/datadog.png">
-          I'm currently a Software Engineer at{' '}
-          <a href="https://www.datadoghq.com/">Datadog</a> on the Azure
-          Integrations team. I worked here as my second co-op (2022), as well as
-          part time during my last semester at Northeastern University. I work
-          primarily as a backend developer using Python, Kubernetes, and large
-          scale microservice architecture.
+          I'm currently a Software Engineer II at{' '}
+          <a href="https://www.datadoghq.com/">Datadog</a>, where I started as
+          an intern in 2022 and 2023 during my time at Northeastern University.
+          I work full-stack using Python, Go, Typescript/React, and Kubernetes,
+          and work day-to-day on a large scale microservice architecture.
         </WorkExperience>
         <WorkExperience name="Azure" icon="/logos/azure.png">
           During my third co-op, I worked at{' '}
