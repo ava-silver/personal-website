@@ -6,12 +6,9 @@ import {
   useMediaQuery,
   Image,
   Spacer,
-  Accordion,
-  AccordionItem,
 } from '@chakra-ui/react';
 import Greeting from './Greeting';
-import { AccordionSection, Section } from './common';
-import Work from './AboutMe/Work';
+import { Section } from './common';
 import Oomfies from './Oomfies';
 import Resources from './Resources';
 import Footer from './Footer';
