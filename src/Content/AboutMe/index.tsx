@@ -8,7 +8,7 @@ import smileSvg from '../icons/smile-sticker.svg';
 export default function AboutMe() {
   return (
     <Section>
-      <Accordion allowToggle allowMultiple variant="outline">
+      <Accordion allowMultiple variant="outline">
         <AccordionSection name="work experience" icon={workSvg} titleSize="1em">
           <Work />
         </AccordionSection>

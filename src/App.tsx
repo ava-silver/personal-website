@@ -11,6 +11,9 @@ const theme = extendTheme({
       1: '#17002a',
       2: '#2a004d',
     },
+    brooke: {
+      pink: '#ff8ac4',
+    },
     textColor: '#efddff',
   },
   fontSizes: {
@@ -75,6 +78,16 @@ const theme = extendTheme({
         backgroundColor:
           'rgba(255, 255, 255, 0.1)' /* Adjust the opacity (0.5) as desired */,
         borderRadius: '10px' /* Add rounded corners if needed */,
+      },
+    },
+  },
+  components: {
+    Link: {
+      baseStyle: {
+        color: 'cyan.500', // Set your desired color here
+        _hover: {
+          textDecoration: 'underline',
+        },
       },
     },
   },
