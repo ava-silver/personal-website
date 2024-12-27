@@ -128,16 +128,16 @@ function Work() {
           and work day-to-day on a large scale microservice architecture.
         </WorkExperience>
         <WorkExperience name="Azure" icon="/logos/azure.png">
-          During my third co-op, I worked at{' '}
-          <a href="https://azure.microsoft.com">Microsoft Azure</a> on the
-          Software Load Balancer (SLB) Buildout team of Azure Core. Here I
+          I interned at{' '}
+          <a href="https://azure.microsoft.com">Microsoft Azure</a> in 2022 on
+          the Software Load Balancer (SLB) Buildout team of Azure Core. Here I
           worked primarily with C# and helped develop internal tooling for core
           Azure infrastructure.
         </WorkExperience>
         <WorkExperience name="Bose" icon="/logos/bose.png">
-          During my first co-op, I worked at{' '}
-          <a href="https://www.bose.com/">Bose</a> in the Automotive Systems
-          Division working on Android app development and OS extensions for{' '}
+          I interned at <a href="https://www.bose.com/">Bose</a> in 2021 on the
+          Automotive Systems Division working on Android app development and OS
+          extensions for{' '}
           <a href="https://source.android.com/devices/automotive/start/what_automotive">
             Android Automotive
           </a>
