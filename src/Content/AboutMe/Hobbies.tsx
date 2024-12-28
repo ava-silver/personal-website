@@ -8,11 +8,11 @@ export default function Hobbies() {
   return (
     <Accordion allowToggle>
       <AccordionSection name="playing music" icon={musicSvg}>
-        I can sing & play the piano, and I know a bit of guitar. I love to play
-        music and sing along with friends -- it's something that always brings
-        me joy. I usually end up playing whatever I've been listening to in the
-        moment, whether it be electronic music, to pop, to hip hop, to classic
-        rock.
+        I can sing, as well as play the piano, trombone, and a bit of guitar. I
+        love to play music and sing along with friends -- it's something that
+        always brings me joy. I usually end up playing whatever I've been
+        listening to in the moment, whether it be electronic music, pop, hip
+        hop, or even classic rock.
       </AccordionSection>
       <AccordionSection name="celeste" icon="/logos/celeste.ico">
         I love playing the game{' '}
@@ -39,7 +39,7 @@ export default function Hobbies() {
         </Link>
         , <Link href="https://miakizz.quest/">Mia</Link>, and{' '}
         <Link href="https://izzy.horse/">Izzy</Link>
-        ), whether it be watching movies, playing games, or just talking. I
+        ), whether it be watching good shows, playing games, or just talking. I
         really appreciate a good deep conversation, and I always love to learn
         more about the people I care about.
         <br />
