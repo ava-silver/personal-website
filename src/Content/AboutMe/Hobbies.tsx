@@ -1,12 +1,12 @@
-import { Accordion, Link } from '@chakra-ui/react';
-import { AccordionSection } from '../common';
+import { AccordionRoot, AccordionSection } from '../../components/ui/accordion';
+import { Link } from '../../components/ui/link';
 import musicSvg from '../icons/music.svg';
 import vinylSvg from '../icons/vinyl.svg';
 import heartSvg from '../icons/heart.svg';
 
 export default function Hobbies() {
   return (
-    <Accordion allowToggle>
+    <AccordionRoot collapsible variant="enclosed">
       <AccordionSection name="playing music" icon={musicSvg}>
         I can sing, as well as play the piano, trombone, and a bit of guitar. I
         love to play music and sing along with friends -- it's something that
@@ -47,6 +47,6 @@ export default function Hobbies() {
         Make sure to check out my friends' websites via the 88x31 buttons at the
         end of the page!
       </AccordionSection>
-    </Accordion>
+    </AccordionRoot>
   );
 }

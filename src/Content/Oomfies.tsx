@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { Section } from './common';
+import { Section } from '../components/ui/section';
 import { Flex, Image } from '@chakra-ui/react';
 import badges from './88x31s.json';
 
@@ -19,7 +19,7 @@ function EightyEightThirtyOne({
         alt={alt}
         height="31px"
         width="88px"
-        sx={{ imageRendering: 'pixelated' }}
+        css={{ imageRendering: 'pixelated' }}
       />
     </a>
   );

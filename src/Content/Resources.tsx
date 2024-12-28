@@ -1,5 +1,6 @@
 import { Center } from '@chakra-ui/react';
-import { Resource, Section } from './common';
+import { Resource } from '../components/ui/resource';
+import { Section } from '../components/ui/section';
 import resumeSvg from './icons/resume-content.svg';
 import githubSvg from './icons/github-content.svg';
 import linkedinSvg from './icons/linkedin-content.svg';

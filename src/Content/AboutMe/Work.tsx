@@ -1,9 +1,9 @@
-import { Accordion, Link } from '@chakra-ui/react';
-import { AccordionSection } from '../common';
+import { AccordionRoot, AccordionSection } from '../../components/ui/accordion';
+import { Link } from '../../components/ui/link';
 
 export default function Work() {
   return (
-    <Accordion allowToggle>
+    <AccordionRoot collapsible variant="enclosed">
       <AccordionSection name="Datadog" icon="/logos/datadog.png">
         I'm currently a Software Engineer II at{' '}
         <Link href="https://www.datadoghq.com/">Datadog</Link>, where I started
@@ -36,6 +36,6 @@ export default function Work() {
         Data Structures, and Fundamentals of Computer Science 1 Accelerated
         (where I also worked a second semester as a Head TA).
       </AccordionSection>
-    </Accordion>
+    </AccordionRoot>
   );
 }

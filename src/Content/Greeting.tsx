@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { BodyText, MinorHeading, Section } from './common';
+import { Section } from '../components/ui/section';
+import { BodyText, MinorHeading } from '../components/ui/text';
 
 export default function Greeting() {
   const cat = useMemo(() => (Math.random() < 0.4 ? ':3' : ''), []);

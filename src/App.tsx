@@ -1,45 +1,15 @@
 import Content from './Content';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
 
-const theme = extendTheme({
-  fonts: {
-    body: 'Comfortaa, system-ui, sans-serif',
-    heading: 'Comfortaa, system-ui, sans-serif',
-  },
-  colors: {
-    bg: {
-      1: '#17002a',
-      2: '#2a004d',
+const system = createSystem(defaultConfig, {
+  globalCss: {
+    html: {
+      color: 'textColor',
+      fontWeight: 600,
+      bg: 'bg.1',
     },
-    brooke: {
-      pink: '#ff8ac4',
-    },
-    textColor: '#efddff',
-  },
-  fontSizes: {
-    xs: '1rem',
-    sm: '1.5rem',
-    md: '2rem',
-    lg: '2.5rem',
-    xl: '3rem',
-    '2xl': '3.5rem',
-    '3xl': '4rem',
-    '4xl': '4.5rem',
-    '5xl': '5rem',
-    '6xl': '5.5rem',
-    '7xl': '6rem',
-    '8xl': '6.5rem',
-    '9xl': '7rem',
-  },
-  styles: {
-    global: {
-      body: {
-        color: 'textColor',
-        fontWeight: 600,
-        bg: 'bg.1',
-      },
-      '.pronouns': {
-        background: `linear-gradient(
+    '.pronouns': {
+      background: `linear-gradient(
           90deg,
           #efddff 0%,
           #efddff 49.9%,
@@ -54,40 +24,61 @@ const theme = extendTheme({
           #55cdfc 93.5%,
           #55cdfc 100%
         )`,
-        WebkitBackgroundClip: 'text',
-        backgroundClip: 'text',
-        WebkitTextFillColor: 'transparent',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '200% 100%',
-        transition: 'background-position 1s ease-in-out',
-      },
-      '.pronouns:hover': {
-        backgroundPosition: '100%',
-      },
-      a: {
-        textDecoration: 'none',
-      },
-      '.clickable': {
-        padding: '5px',
-        display: 'inline-block',
-        position: 'relative',
-        transition: 'transform 0.4s ease-in-out',
-      },
-      '.clickable:hover': {
-        transform: 'scale(1.05)',
-        backgroundColor:
-          'rgba(255, 255, 255, 0.1)' /* Adjust the opacity (0.5) as desired */,
-        borderRadius: '10px' /* Add rounded corners if needed */,
-      },
+      backgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '200% 100%',
+      transition: 'background-position 1s ease-in-out',
+    },
+    '.pronouns:hover': {
+      backgroundPosition: '100%',
+    },
+    a: {
+      textDecoration: 'none',
+    },
+    '.clickable': {
+      padding: '5px',
+      display: 'inline-block',
+      position: 'relative',
+      transition: 'transform 0.4s ease-in-out',
+    },
+    '.clickable:hover': {
+      transform: 'scale(1.05)',
+      backgroundColor:
+        'rgba(255, 255, 255, 0.1)' /* Adjust the opacity (0.5) as desired */,
+      borderRadius: '10px' /* Add rounded corners if needed */,
     },
   },
-  components: {
-    Link: {
-      baseStyle: {
-        color: 'cyan.500', // Set your desired color here
-        _hover: {
-          textDecoration: 'underline',
+  theme: {
+    tokens: {
+      fonts: {
+        body: { value: 'Comfortaa, system-ui, sans-serif' },
+        heading: { value: 'Comfortaa, system-ui, sans-serif' },
+      },
+      colors: {
+        bg: {
+          1: { value: '#17002a' },
+          2: { value: '#2a004d' },
         },
+        brooke: {
+          pink: { value: '#ff8ac4' },
+        },
+        textColor: { value: '#efddff' },
+      },
+      fontSizes: {
+        xs: { value: '1rem' },
+        sm: { value: '1.5rem' },
+        md: { value: '2rem' },
+        lg: { value: '2.5rem' },
+        xl: { value: '3rem' },
+        '2xl': { value: '3.5rem' },
+        '3xl': { value: '4rem' },
+        '4xl': { value: '4.5rem' },
+        '5xl': { value: '5rem' },
+        '6xl': { value: '5.5rem' },
+        '7xl': { value: '6rem' },
+        '8xl': { value: '6.5rem' },
+        '9xl': { value: '7rem' },
       },
     },
   },
@@ -95,7 +86,7 @@ const theme = extendTheme({
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider value={system}>
       <Content />
     </ChakraProvider>
   );

@@ -1,5 +1,5 @@
 import { Center, Text } from '@chakra-ui/react';
-import { Resource } from './common';
+import { Resource } from '../components/ui/resource';
 import github_svg from './icons/github-content.svg';
 
 export default function Footer() {

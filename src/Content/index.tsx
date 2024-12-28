@@ -8,14 +8,16 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 import Greeting from './Greeting';
-import { Section } from './common';
+import { Section } from '../components/ui/section';
 import Oomfies from './Oomfies';
 import Resources from './Resources';
 import Footer from './Footer';
 import AboutMe from './AboutMe';
 
 export default function Content() {
-  const [isMobile] = useMediaQuery('(max-width: 768px)');
+  const [isMobile] = useMediaQuery(['(max-width: 768px)'], {
+    fallback: [false],
+  });
   return (
     <Stack alignItems="center" m={[3, 8]} gap="1rem">
       <Box paddingY="1rem">
