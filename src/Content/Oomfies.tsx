@@ -13,7 +13,7 @@ function EightyEightThirtyOne({
   alt: string;
 }) {
   return (
-    <a href={href}>
+    <a href={href} data-neko="true">
       <Image
         src={'/badges/' + src}
         alt={alt}
