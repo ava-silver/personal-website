@@ -75,10 +75,10 @@ export function AccordionSection({
     <AccordionItem key={name} value={name} backgroundColor="transparent">
       <Box m={0.5}>
         <AccordionItemTrigger margin={0} padding={0}>
-          <Center flexDir="row" gap="1rem" fontSize={titleSize}>
+          <Center flexDir="row" gap="1rem" fontSize={titleSize} lineHeight={1}>
             <Center
-              width="45px"
-              height="45px"
+              minWidth="45px"
+              minHeight="45px"
               borderRadius="5px"
               backgroundColor="white"
             >
@@ -88,7 +88,7 @@ export function AccordionSection({
           </Center>
           <Spacer />
         </AccordionItemTrigger>
-        <Accordion.ItemContent>{children}</Accordion.ItemContent>
+        <Accordion.ItemContent padding={2}>{children}</Accordion.ItemContent>
       </Box>
     </AccordionItem>
   );
