@@ -18,7 +18,7 @@ export default function Hobbies() {
         I love playing the game{' '}
         <Link href="https://www.celestegame.com/">celeste</Link>, particularly
         speedrunning the game. My current any% (the category I usually play) PB
-        is 47 mins and 01.48 seconds. While I played it the most from 2022-2023,
+        is 46 mins and 27.49 seconds. While I played it the most from 2022-2023,
         these days I still hop on to get in a few runs every now and then!
       </AccordionSection>
       <AccordionSection name="vinyl" icon={vinylSvg}>
