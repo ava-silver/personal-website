@@ -36,9 +36,8 @@ export default function Hobbies() {
         I love spending time with my friends and girlfriends (
         <Link href="https://breq.dev/" color="brooke.pink">
           Brooke
-        </Link>
-        , <Link href="https://miakizz.quest/">Mia</Link>, and{' '}
-        <Link href="https://izzy.horse/">Izzy</Link>
+        </Link>{' '}
+        and <Link href="https://miakizz.quest/">Mia</Link>
         ), whether it be watching good shows, playing games, or just talking. I
         really appreciate a good deep conversation, and I always love to learn
         more about the people I care about.
