@@ -4,6 +4,7 @@ import { Card, Stack } from '@chakra-ui/react';
 import { Link } from 'react-router';
 import { FaArrowLeft } from 'react-icons/fa';
 const md = `# Transition: A Retrospective
+Date: 2025-06-22
 
 It's been nearly five years now since I began really considering my own gender and started transitioning, and seeing as both of my girlfriends have written blog posts discussing transition and what it has meant to them ([Mia's post](https://miakizz.quest/posts/trans1/), [Brooke's post](https://breq.dev/2025/06/22/gender)), I figured I'd follow suit with a post of my own.
 
