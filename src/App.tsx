@@ -1,5 +1,7 @@
 import Content from './Content';
+import Blog from './Blog';
 import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
+import { BrowserRouter, Route, Routes } from 'react-router';
 
 const system = createSystem(defaultConfig, {
   globalCss: {
@@ -87,7 +89,12 @@ const system = createSystem(defaultConfig, {
 function App() {
   return (
     <ChakraProvider value={system}>
-      <Content />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Content />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }

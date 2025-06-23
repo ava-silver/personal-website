@@ -4,6 +4,7 @@ import { Section } from '../components/ui/section';
 import resumeSvg from './icons/resume-content.svg';
 import githubSvg from './icons/github-content.svg';
 import linkedinSvg from './icons/linkedin-content.svg';
+import blogSvg from './icons/blog.svg';
 
 export default function Resources() {
   return (
@@ -19,6 +20,11 @@ export default function Resources() {
           name="Github"
           href="https://github.com/ava-silver"
           src={githubSvg}
+        />
+        <Resource
+          name="Blog"
+          href="/blog"
+          src={blogSvg}
         />
       </Center>
     </Section>

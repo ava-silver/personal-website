@@ -4,13 +4,15 @@
   "version": "1.0.0",
   "private": false,
   "dependencies": {
-    "@chakra-ui/react": "3.21.0",
+    "@chakra-ui/react": "^3.21.0",
     "@emotion/react": "^11.14.0",
-    "@types/color": "4.2.0",
-    "next-themes": "0.4.6",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-icons": "5.5.0",
+    "@types/color": "^4.2.0",
+    "next-themes": "^0.4.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "react-router": "^7.6.2",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
