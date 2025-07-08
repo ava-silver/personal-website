@@ -1,5 +1,4 @@
 import * as React from 'react';
-import deepmerge from 'deepmerge';
 import { Components } from 'react-markdown';
 import {
   Code,
@@ -24,14 +23,7 @@ function getCoreProps(props: GetCoreProps): any {
     : {};
 }
 
-interface Defaults extends Components {
-  /**
-   * @deprecated Use `h1, h2, h3, h4, h5, h6` instead.
-   */
-  heading?: Components['h1'];
-}
-
-export const defaults: Defaults = {
+export const defaults: Components = {
   p: (props) => {
     const { children } = props;
     return <Text mb={2}>{children}</Text>;
@@ -42,7 +34,7 @@ export const defaults: Defaults = {
   },
   blockquote: (props) => {
     return (
-      <Blockquote.Root mb='1'>
+      <Blockquote.Root mb="1">
         <Blockquote.Content>{props.children}</Blockquote.Content>
       </Blockquote.Root>
     );
@@ -95,13 +87,6 @@ export const defaults: Defaults = {
   li: (props) => {
     return <List.Item {...getCoreProps(props)}>{props.children}</List.Item>;
   },
-  heading: (props) => {
-    return (
-      <Heading my={4} size={'lg'} {...getCoreProps(props)}>
-        {props.children}
-      </Heading>
-    );
-  },
   h1: (props) => {
     return (
       <Heading my={4} size={'lg'} {...getCoreProps(props)}>
@@ -112,6 +97,13 @@ export const defaults: Defaults = {
   h2: (props) => {
     return (
       <Heading my={4} size={'sm'} {...getCoreProps(props)}>
+        {props.children}
+      </Heading>
+    );
+  },
+  h3: (props) => {
+    return (
+      <Heading my={4} size={'xs'} {...getCoreProps(props)}>
         {props.children}
       </Heading>
     );
@@ -128,40 +120,11 @@ export const defaults: Defaults = {
   th: (props) => <Table.Header>{props.children}</Table.Header>,
 };
 
-function ChakraUIRenderer(theme?: Defaults, merge = true): Components {
-  const elements = {
-    p: defaults.p,
-    em: defaults.em,
-    blockquote: defaults.blockquote,
-    code: defaults.code,
-    del: defaults.del,
-    hr: defaults.hr,
-    a: defaults.a,
-    img: defaults.img,
-    text: defaults.text,
-    ul: defaults.ul,
-    ol: defaults.ol,
-    li: defaults.li,
-    h1: defaults.h1,
-    h2: defaults.h2,
-    h3: defaults.heading,
-    h4: defaults.heading,
-    h5: defaults.heading,
-    h6: defaults.heading,
-    pre: defaults.pre,
-    table: defaults.table,
-    thead: defaults.thead,
-    tbody: defaults.tbody,
-    tr: defaults.tr,
-    td: defaults.td,
-    th: defaults.th,
-  };
+const renderer: Components = {
+  ...defaults,
+  h4: defaults.h3,
+  h5: defaults.h3,
+  h6: defaults.h3,
+};
 
-  if (theme && merge) {
-    return deepmerge(elements, theme);
-  }
-
-  return elements;
-}
-
-export default ChakraUIRenderer;
+export default renderer;
