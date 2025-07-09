@@ -6,8 +6,9 @@ import { FaArrowLeft } from 'react-icons/fa';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 import transition from '!!raw-loader!./posts/2025-06-22-transition.md';
+import coming_out from '!!raw-loader!./posts/2025-07-08-coming-out.md';
 
-const posts = [transition];
+const posts = [coming_out, transition];
 
 export default function Blog() {
   return (

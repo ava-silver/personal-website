@@ -72,16 +72,16 @@ export const defaults: Components = {
   },
   ul: (props) => {
     return (
-      <List.Item spacing={2} as="ul" pl={4} {...getCoreProps(props)}>
+      <List.Root spacing={2} as="ul" pl={4} {...getCoreProps(props)}>
         {props.children}
-      </List.Item>
+      </List.Root>
     );
   },
   ol: (props) => {
     return (
-      <List.Item spacing={2} as="ol" pl={4} {...getCoreProps(props)}>
+      <List.Root spacing={2} as="ol" pl={4} {...getCoreProps(props)}>
         {props.children}
-      </List.Item>
+      </List.Root>
     );
   },
   li: (props) => {
