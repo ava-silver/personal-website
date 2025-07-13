@@ -24,7 +24,7 @@ Rewinding a bit, as a boy, I had always felt that label Bisexual never fully qui
 In fact, in the midst of all this, I got some advice from a friend that (unknowingly) pushed me to start transitioning:
 > Don't worry about figuring everything out in your mind -- just focus on doing what feels right.
 
-This mindset shift for me got me out of a loop of anxiety and uncertainty, and helped me live in the moment and not worry about every single detail. Living in this way has shaped my view on labels -- that they are helpful in helping you understand and validate your feelings, but that they aren't a requirement for you to start living your best life. It is better to f\\*ck around now and find out later, than to never f\\*ck around and never find out what you really want in life.
+This mindset shift for me got me out of a loop of anxiety and uncertainty, and helped me live in the moment and not worry about every single detail. Living in this way has shaped my view on labels -- that they are helpful in helping you understand and validate your feelings, but that they aren't a requirement for you to start living your best life. It is better to f\*ck around now and find out later, than to never f\*ck around and never find out what you really want in life.
 
 ## End of Beginning
 
