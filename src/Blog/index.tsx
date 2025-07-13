@@ -4,17 +4,12 @@ import { Card, Stack, Text } from '@chakra-ui/react';
 import { Link, Route } from 'react-router';
 import { FaArrowLeft } from 'react-icons/fa';
 import posts from './posts';
+import { Column } from '../components/ui/column';
 
 
 function BlogList() {
   return (
-    <Stack
-      alignItems="center"
-      width="100%"
-      m={[3, 8]}
-      gap="1rem"
-      justifyContent="flex-start"
-    >
+    <Column>
       <Stack direction="row" width="100%" justifyContent="flex-start">
         <Link to="/" aria-label="Home">
           <FaArrowLeft style={{ marginRight: '8px' }} />
@@ -37,13 +32,13 @@ function BlogList() {
           </Card.Root>
         </Link>
       ))}
-    </Stack>
+    </Column>
   );
 }
 
 function BlogPost({ content }: { content: string }) {
   return (
-    <Stack alignItems="center" m={[3, 8]}>
+    <Column>
       <Stack direction="row" width="100%" justifyContent="flex-start">
         <Link to="/blog" aria-label="Blog">
           <FaArrowLeft style={{ marginRight: '8px' }} />
@@ -60,7 +55,7 @@ function BlogPost({ content }: { content: string }) {
           <Markdown components={renderer} children={content} skipHtml />
         </Card.Body>
       </Card.Root>
-    </Stack>
+    </Column>
   );
 }
 export const blogRoutes = (
