@@ -1,5 +1,5 @@
 import Content from './Content';
-import Blog from './Blog';
+import { Blog, blogRoutes } from './Blog';
 import { ChakraProvider, createSystem, defaultConfig } from '@chakra-ui/react';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
@@ -91,8 +91,10 @@ function App() {
     <ChakraProvider value={system}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Content />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route index element={<Content />} />
+          <Route path="blog" element={<Blog />}>
+            {blogRoutes}
+          </Route>
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
