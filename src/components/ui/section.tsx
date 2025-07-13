@@ -1,7 +1,6 @@
 import { Card } from '@chakra-ui/react';
-import { ComponentProps } from 'react';
 
-export function Section(props: ComponentProps<'div'>) {
+export function Section(props: Card.RootProps) {
   return (
     <Card.Root
       bg="bg.2"
@@ -9,6 +8,7 @@ export function Section(props: ComponentProps<'div'>) {
       width={['100%', '90%', '40rem']}
       height="auto"
       border="none"
+      {...props}
     >
       <Card.Body height="auto" minHeight="5rem">
         {props.children}

@@ -1,11 +1,9 @@
-import { Stack } from '@chakra-ui/react';
-import { ComponentProps } from 'react';
+import { Stack, StackProps } from '@chakra-ui/react';
 
-export function Column({ children }: ComponentProps<'div'>) {
+export function Column(props: StackProps) {
   return (
-    <Stack alignItems="center" m={[3, 8]} gap="1rem">
-      {children}
+    <Stack alignItems="center" m={[3, 8]} gap="1rem" {...props}>
+      {props.children}
     </Stack>
   );
 }
-

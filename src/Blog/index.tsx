@@ -5,7 +5,7 @@ import { Link, Route } from 'react-router';
 import { FaArrowLeft } from 'react-icons/fa';
 import posts from './posts';
 import { Column } from '../components/ui/column';
-
+import { Section } from '../components/ui/section';
 
 function BlogList() {
   return (
@@ -17,19 +17,12 @@ function BlogList() {
       </Stack>
       {posts.map(({ id, title, description }) => (
         <Link to={`/blog/${id}`}>
-          <Card.Root
-            bg="bg.2"
-            color="textColor"
-            width={['100%', '90%', '40rem']}
-            height="auto"
-            border="none"
-            className="clickable"
-          >
-            <Card.Body height="auto" minHeight="5rem">
-              <Text textStyle="sm">{title}</Text>
-              <Text fontWeight="light">{description}</Text>
-            </Card.Body>
-          </Card.Root>
+          <Section className="clickable">
+            <Text textStyle="sm" mb={1}>
+              {title}
+            </Text>
+            <Text fontWeight="light">{description}</Text>
+          </Section>
         </Link>
       ))}
     </Column>
