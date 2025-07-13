@@ -9,7 +9,7 @@ import blogSvg from './icons/blog.svg';
 export default function Resources() {
   return (
     <Section>
-      <Center gap="2rem">
+      <Center justifyContent="space-around">
         <Resource name="Resume" href="resume.pdf" src={resumeSvg} />
         <Resource
           name="LinkedIn"
@@ -21,11 +21,7 @@ export default function Resources() {
           href="https://github.com/ava-silver"
           src={githubSvg}
         />
-        <Resource
-          name="Blog"
-          href="/blog"
-          src={blogSvg}
-        />
+        <Resource name="Blog" href="/blog" src={blogSvg} />
       </Center>
     </Section>
   );
