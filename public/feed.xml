@@ -1,0 +1,27 @@
+<rss version="2.0">
+  <channel>
+    <title>Ava Silver</title>
+    <description>
+      i'm ava silver (she/her). welcome to my corner of the internet!
+    </description>
+    <link>https://avasilver.dev</link>
+    <atom:link href="https://avasilver.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>17 Jul 2025 00:00:00 -0400</lastBuildDate>
+
+    <item>
+      <title>Coming Out</title>
+      <link>https://avasilver.dev/blog/coming-out</link>
+      <description>A reflection on what it means to come out</description>
+      <pubDate>08 Jul 2025 00:00:00 -0400</pubDate>
+      <guid isPermaLink="true">https://avasilver.dev/blog/coming-out</guid>
+    </item>
+
+    <item>
+      <title>Transition: A Retrospective</title>
+      <link>https://avasilver.dev/blog/transition</link>
+      <description>A retrospective of the last 5 years of my transition</description>
+      <pubDate>22 Jun 2025 00:00:00 -0400</pubDate>
+      <guid isPermaLink="true">https://avasilver.dev/blog/transition</guid>
+    </item>
+  </channel>
+</rss>
