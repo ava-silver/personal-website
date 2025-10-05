@@ -30,7 +30,11 @@ export const defaults: Components = {
   },
   em: (props) => {
     const { children } = props;
-    return <Text as="em">{children}</Text>;
+    return (
+      <Text as="em" fontStyle="italic">
+        {children}
+      </Text>
+    );
   },
   blockquote: (props) => {
     return (

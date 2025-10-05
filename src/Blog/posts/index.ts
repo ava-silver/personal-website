@@ -1,6 +1,7 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import transition from '!!raw-loader!./2025-06-22-transition.md';
 import coming_out from '!!raw-loader!./2025-07-08-coming-out.md';
+import to_be_a_mother from '!!raw-loader!./2025-10-04-to-be-a-mother.md';
 
 interface PostData {
   title: string;
@@ -10,6 +11,12 @@ interface PostData {
 }
 
 const posts: PostData[] = [
+  {
+    title: 'To Be a Mother',
+    id: 'to-be-a-mother',
+    description: 'A poem about the relationship between mother and child',
+    content: to_be_a_mother,
+  },
   {
     title: 'Coming Out',
     id: 'coming-out',
