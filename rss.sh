@@ -17,16 +17,16 @@ EOF
 ls src/Blog/posts/*.md | while read -r file; do
     filename=$(basename "$file" .md)
     htmlfile="./build/rss/${filename}.html"
-    pandoc "$file" -f markdown -t html -o $htmlfile
+    pandoc "$file" -f markdown -t html -o "$htmlfile"
 
     post_link="https://avasilver.dev/blog/$(cut -d'-' -f4- <<<"$filename")"
     cat >> public/feed.xml <<EOF
     <item>
-      <title>$(grep '# ' $file | cut -d'#' -f2 | xargs)</title>
+      <title>$(grep '# ' "$file" | cut -d'#' -f2 | xargs)</title>
       <link>${post_link}</link>
       <guid isPermaLink="true">${post_link}</guid>
       <pubDate>$(cut -d'-' -f1-3 <<<"$filename" | xargs -I{} date -d {} +"%d %b %Y 00:00:00 %z")</pubDate>
-      <description><![CDATA[$(cat $htmlfile)]]></description>
+      <description><![CDATA[$(cat "$htmlfile")]]></description>
     </item>
 EOF
 done
