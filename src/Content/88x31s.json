@@ -16,9 +16,9 @@
     "url": "https://miakizz.quest/"
   },
   {
-    "name": "maxine",
-    "image": "maxine.png",
-    "url": "https://prsmaticwolf.itch.io/"
+    "name": "tris",
+    "image": "tris.png",
+    "url": "https://tris.fyi/"
   },
   {
     "name": "ari",
@@ -26,19 +26,14 @@
     "url": "https://adryd.com/"
   },
   {
-    "name": "tris",
-    "image": "tris.png",
-    "url": "https://tris.fyi/"
+    "name": "maxine",
+    "image": "maxine.png",
+    "url": "https://prsmaticwolf.itch.io/"
   },
   {
     "name": "philo",
     "image": "philo.png",
     "url": "https://philo.gay/"
-  },
-  {
-    "name": "izzy",
-    "image": "izzy.png",
-    "url": "https://izzy.horse/"
   },
   {
     "name": "julia",
