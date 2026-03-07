@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import * as React from 'react';
 import { LuChevronDown } from 'react-icons/lu';
+import { useWebHaptics } from 'web-haptics/react';
 
 interface AccordionItemTriggerProps extends Accordion.ItemTriggerProps {
   indicatorPlacement?: 'start' | 'end';
@@ -19,8 +20,9 @@ export const AccordionItemTrigger = React.forwardRef<
   AccordionItemTriggerProps
 >(function AccordionItemTrigger(props, ref) {
   const { children, indicatorPlacement = 'end', ...rest } = props;
+  const { trigger } = useWebHaptics();
   return (
-    <Accordion.ItemTrigger {...rest} ref={ref}>
+    <Accordion.ItemTrigger {...rest} ref={ref} onClick={() => trigger('selection')}>
       {indicatorPlacement === 'start' && (
         <Accordion.ItemIndicator rotate={{ base: '-90deg', _open: '0deg' }}>
           <LuChevronDown />
