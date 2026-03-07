@@ -1,7 +1,6 @@
-/* eslint-disable import/no-webpack-loader-syntax */
-import transition from '!!raw-loader!./2025-06-22-transition.md';
-import coming_out from '!!raw-loader!./2025-07-08-coming-out.md';
-import to_be_a_mother from '!!raw-loader!./2025-10-04-to-be-a-mother.md';
+import transition from './2025-06-22-transition.md?raw';
+import coming_out from './2025-07-08-coming-out.md?raw';
+import to_be_a_mother from './2025-10-04-to-be-a-mother.md?raw';
 
 interface PostData {
   title: string;
