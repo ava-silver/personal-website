@@ -188,27 +188,47 @@ import blogSvg from '../assets/icons/blog.svg?url';
     import { WebHaptics } from 'web-haptics';
 
     const haptics = new WebHaptics();
+
+    // Accordion height animation: block-size can't transition to/from `auto`
+    // without interpolate-size support, so we pin a measured pixel value in
+    // --acc-content-size right before a toggle, and drop back to `auto` once
+    // the open transition finishes (so later inner expansions aren't clipped)
+    const measure = (d: HTMLDetailsElement) => {
+      const content = d.querySelector<HTMLElement>(':scope > .acc-content');
+      if (content)
+        d.style.setProperty('--acc-content-size', `${content.offsetHeight}px`);
+    };
+
     document.addEventListener('click', (e) => {
       const summary = (e.target as Element).closest('summary');
       if (!summary) return;
       haptics.trigger('selection');
 
-      // measure the accordion's content right before it opens so block-size can
-      // transition without interpolate-size support (--acc-content-size);
-      // doing it at click time keeps nested-in-closed-parents measuring correct
       const details = summary.closest<HTMLDetailsElement>(
         'details.acc-section'
       );
-      const content = details?.querySelector<HTMLElement>(
-        ':scope > .acc-content'
-      );
-      if (details && !details.open && content)
-        details.style.setProperty(
-          '--acc-content-size',
-          `${content.offsetHeight}px`
-        );
+      if (!details) return;
+
+      // pin the height of the accordion being toggled (open or close)
+      measure(details);
+
+      // ancestors that are already open should stay at `auto` so they can
+      // grow/shrink freely with nested toggles
+      for (let p = details.parentElement; p; p = p.parentElement) {
+        const ancestor = p.closest<HTMLDetailsElement>('details.acc-section');
+        if (!ancestor) break;
+        ancestor.style.removeProperty('--acc-content-size');
+      }
     });
 
+    document.addEventListener('transitionend', (e) => {
+      if (
+        e.propertyName === 'block-size' &&
+        e.pseudoElement === '::details-content' &&
+        (e.target as HTMLElement).hasAttribute('open')
+      )
+        (e.target as HTMLElement).style.removeProperty('--acc-content-size');
+    });
     const cat = document.getElementById('cat');
     if (cat && Math.random() < 0.4) cat.textContent = ':3';
 
