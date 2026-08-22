@@ -47,16 +47,18 @@ import blogSvg from '../assets/icons/blog.svg?url';
       <div style="display: flex; flex-direction: column;">
         <AccordionSection name="work experience" icon={workSvg} titleSize="1em">
           <AccordionSection name="Datadog" icon={datadogLogo}>
-            I'm currently a Software Engineer II at
-            <a href="https://www.datadoghq.com/" class="text-link">Datadog</a>,
-            where I started as an intern in 2022 and 2023 during my time at
+            I'm currently a Software Engineer II at <a
+              href="https://www.datadoghq.com/"
+              class="text-link">Datadog</a
+            >, where I started as an intern in 2022 and 2023 during my time at
             Northeastern University. I work full-stack using Python, Go,
             Typescript/React, and Kubernetes, and work day-to-day on a large
             scale microservice architecture.
           </AccordionSection>
           <AccordionSection name="Azure" icon={azureLogo}>
-            I interned at<a href="https://azure.microsoft.com" class="text-link"
-              >Microsoft Azure</a
+            I interned at <a
+              href="https://azure.microsoft.com"
+              class="text-link">Microsoft Azure</a
             > in 2022 on the Software Load Balancer (SLB) Buildout team of Azure Core.
             Here I worked primarily with C# and helped develop internal tooling for
             core Azure infrastructure.
@@ -65,16 +67,15 @@ import blogSvg from '../assets/icons/blog.svg?url';
             I interned at <a href="https://www.bose.com/" class="text-link"
               >Bose</a
             > in 2021 on the Automotive Systems Division working on Android app development
-            and OS extensions for
-            <a
+            and OS extensions for <a
               href="https://source.android.com/devices/automotive/start/what_automotive"
               class="text-link">Android Automotive</a
             >.
           </AccordionSection>
           <AccordionSection name="Northeastern" icon={northeasternLogo}>
-            During my time at
-            <a href="https://www.northeastern.edu/" class="text-link"
-              >Northeastern Univeristy</a
+            During my time at <a
+              href="https://www.northeastern.edu/"
+              class="text-link">Northeastern Univeristy</a
             > studing computer science, I was a Teaching Assistant for Algorithms
             & Data Structures, and Fundamentals of Computer Science 1 Accelerated
             (where I also worked a second semester as a Head TA).
@@ -92,8 +93,9 @@ import blogSvg from '../assets/icons/blog.svg?url';
             electronic music, pop, hip hop, or even classic rock.
           </AccordionSection>
           <AccordionSection name="celeste" icon="/logos/celeste.ico">
-            I love playing the game
-            <a href="https://www.celestegame.com/" class="text-link">celeste</a
+            I love playing the game <a
+              href="https://www.celestegame.com/"
+              class="text-link">celeste</a
             >, particularly speedrunning the game. My current any% (the category
             I usually play) PB is 45 mins and 17.18 seconds. While I played it
             the most from 2022-2023, these days I still hop on to get in a few
@@ -101,17 +103,19 @@ import blogSvg from '../assets/icons/blog.svg?url';
           </AccordionSection>
           <AccordionSection name="vinyl" icon={vinylSvg}>
             I've started collecting records, as I finally got a record player
-            when I moved to somerville, MA, with my girlfriend
-            <a href="https://breq.dev/" class="text-link brooke-link">Brooke</a
+            when I moved to somerville, MA, with my girlfriend <a
+              href="https://breq.dev/"
+              class="text-link brooke-link">Brooke</a
             >. I really enjoy owning my favorite albums in a physical medium,
             and having a more intentional listening experience, especially since
             my preferred way to listen to music is to sit down and listen to an
             album front to back.
           </AccordionSection>
           <AccordionSection name="friends & loved ones" icon={heartSvg}>
-            I love spending time with my friends and girlfriends (
-            <a href="https://breq.dev/" class="text-link brooke-link">Brooke</a>
-            and <a href="https://miakizz.quest/" class="text-link">Mia</a>),
+            I love spending time with my friends and girlfriends (<a
+              href="https://breq.dev/"
+              class="text-link brooke-link">Brooke</a
+            > and <a href="https://miakizz.quest/" class="text-link">Mia</a>),
             whether it be watching good shows, playing games, or just talking. I
             really appreciate a good deep conversation, and I always love to
             learn more about the people I care about.<br /><br />
@@ -211,6 +215,21 @@ import blogSvg from '../assets/icons/blog.svg?url';
 
       // pin the height of the accordion being toggled (open or close)
       measure(details);
+
+      // nested accordion groups act radio-style: opening one closes its
+      // open siblings (the outer sections stay independently openable)
+      const parent = details.parentElement;
+      if (!details.open && parent?.classList.contains('acc-content')) {
+        parent
+          .querySelectorAll<HTMLDetailsElement>(
+            ':scope > details.acc-section[open]'
+          )
+          .forEach((sibling) => {
+            if (sibling === details) return;
+            measure(sibling);
+            sibling.open = false;
+          });
+      }
 
       // ancestors that are already open should stay at `auto` so they can
       // grow/shrink freely with nested toggles
