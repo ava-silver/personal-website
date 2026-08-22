@@ -9,7 +9,7 @@ interface Props {
   open?: boolean;
 }
 
-const { name, icon, titleSize = '0.75em', open = false } = Astro.props;
+const { name, icon, titleSize = '1em', open = false } = Astro.props;
 ---
 
 <details class="acc-section" open={open || undefined}>
