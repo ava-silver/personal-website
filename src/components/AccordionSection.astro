@@ -7,12 +7,14 @@ interface Props {
   icon: ImageMetadata | string;
   titleSize?: string;
   open?: boolean;
+  /** native exclusive-group name: opening one closes its open group siblings */
+  group?: string;
 }
 
-const { name, icon, titleSize = '1em', open = false } = Astro.props;
+const { name, icon, titleSize = '1em', open = false, group } = Astro.props;
 ---
 
-<details class="acc-section" open={open || undefined}>
+<details class="acc-section" data-group={group} open={open || undefined}>
   <summary>
     <span class="acc-header" style={`font-size: ${titleSize}`}>
       <span class="acc-icon-box">
@@ -41,6 +43,36 @@ const { name, icon, titleSize = '1em', open = false } = Astro.props;
     </svg>
   </summary>
   <div class="acc-content">
-    <slot />
+    <div class="acc-content-inner">
+      <slot />
+    </div>
   </div>
 </details>
+
+<script>
+  import { WebHaptics } from 'web-haptics';
+
+  const haptics = new WebHaptics();
+  // Astro dedupes hoisted scripts, so this listener is registered once.
+  // Radio-style groups: closing siblings via `.open = false` (rather than
+  // native <details name>) so their close animation plays in the same frame
+  // the clicked accordion opens.
+  document.addEventListener('click', (e) => {
+    const summary = (e.target as Element).closest?.(
+      'details.acc-section > summary'
+    );
+    if (!summary) return;
+    haptics.trigger('selection');
+
+    const details = summary.closest<HTMLDetailsElement>('details.acc-section');
+    if (!details || details.open || !details.dataset.group) return;
+
+    document
+      .querySelectorAll<HTMLDetailsElement>(
+        `details.acc-section[data-group="${details.dataset.group}"][open]`
+      )
+      .forEach((sibling) => {
+        if (sibling !== details) sibling.open = false;
+      });
+  });
+</script>

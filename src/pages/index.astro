@@ -46,7 +46,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
     <Section>
       <div style="display: flex; flex-direction: column;">
         <AccordionSection name="work experience" icon={workSvg}>
-          <AccordionSection name="Datadog" icon={datadogLogo}>
+          <AccordionSection name="Datadog" icon={datadogLogo} group="work">
             I'm currently a Software Engineer II at <a
               href="https://www.datadoghq.com/"
               class="text-link">Datadog</a
@@ -55,7 +55,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
             Typescript/React, and Kubernetes, and work day-to-day on a large
             scale microservice architecture.
           </AccordionSection>
-          <AccordionSection name="Azure" icon={azureLogo}>
+          <AccordionSection name="Azure" icon={azureLogo} group="work">
             I interned at <a
               href="https://azure.microsoft.com"
               class="text-link">Microsoft Azure</a
@@ -63,7 +63,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
             Here I worked primarily with C# and helped develop internal tooling for
             core Azure infrastructure.
           </AccordionSection>
-          <AccordionSection name="Bose" icon={boseLogo}>
+          <AccordionSection name="Bose" icon={boseLogo} group="work">
             I interned at <a href="https://www.bose.com/" class="text-link"
               >Bose</a
             > in 2021 on the Automotive Systems Division working on Android app development
@@ -72,7 +72,11 @@ import blogSvg from '../assets/icons/blog.svg?url';
               class="text-link">Android Automotive</a
             >.
           </AccordionSection>
-          <AccordionSection name="Northeastern" icon={northeasternLogo}>
+          <AccordionSection
+            name="Northeastern"
+            icon={northeasternLogo}
+            group="work"
+          >
             During my time at <a
               href="https://www.northeastern.edu/"
               class="text-link">Northeastern Univeristy</a
@@ -85,14 +89,22 @@ import blogSvg from '../assets/icons/blog.svg?url';
         <div style="padding: 4px;"></div>
 
         <AccordionSection name="hobbies & fun" icon={smileSvg}>
-          <AccordionSection name="playing music" icon={musicSvg}>
+          <AccordionSection
+            name="playing music"
+            icon={musicSvg}
+            group="hobbies"
+          >
             I can sing, as well as play the piano, trombone, and a bit of
             guitar. I love to play music and sing along with friends -- it's
             something that always brings me joy. I usually end up playing
             whatever I've been listening to in the moment, whether it be
             electronic music, pop, hip hop, or even classic rock.
           </AccordionSection>
-          <AccordionSection name="celeste" icon="/logos/celeste.ico">
+          <AccordionSection
+            name="celeste"
+            icon="/logos/celeste.ico"
+            group="hobbies"
+          >
             I love playing the game <a
               href="https://www.celestegame.com/"
               class="text-link">celeste</a
@@ -101,7 +113,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
             the most from 2022-2023, these days I still hop on to get in a few
             runs every now and then!
           </AccordionSection>
-          <AccordionSection name="vinyl" icon={vinylSvg}>
+          <AccordionSection name="vinyl" icon={vinylSvg} group="hobbies">
             I've started collecting records, as I finally got a record player
             when I moved to somerville, MA, with my girlfriend <a
               href="https://breq.dev/"
@@ -111,7 +123,11 @@ import blogSvg from '../assets/icons/blog.svg?url';
             my preferred way to listen to music is to sit down and listen to an
             album front to back.
           </AccordionSection>
-          <AccordionSection name="friends & loved ones" icon={heartSvg}>
+          <AccordionSection
+            name="friends & loved ones"
+            icon={heartSvg}
+            group="hobbies"
+          >
             I love spending time with my friends and girlfriends (<a
               href="https://breq.dev/"
               class="text-link brooke-link">Brooke</a
@@ -189,65 +205,6 @@ import blogSvg from '../assets/icons/blog.svg?url';
   </div>
 
   <script>
-    import { WebHaptics } from 'web-haptics';
-
-    const haptics = new WebHaptics();
-
-    // Accordion height animation: block-size can't transition to/from `auto`
-    // without interpolate-size support, so we pin a measured pixel value in
-    // --acc-content-size right before a toggle, and drop back to `auto` once
-    // the open transition finishes (so later inner expansions aren't clipped)
-    const measure = (d: HTMLDetailsElement) => {
-      const content = d.querySelector<HTMLElement>(':scope > .acc-content');
-      if (content)
-        d.style.setProperty('--acc-content-size', `${content.offsetHeight}px`);
-    };
-
-    document.addEventListener('click', (e) => {
-      const summary = (e.target as Element).closest('summary');
-      if (!summary) return;
-      haptics.trigger('selection');
-
-      const details = summary.closest<HTMLDetailsElement>(
-        'details.acc-section'
-      );
-      if (!details) return;
-
-      // pin the height of the accordion being toggled (open or close)
-      measure(details);
-
-      // nested accordion groups act radio-style: opening one closes its
-      // open siblings (the outer sections stay independently openable)
-      const parent = details.parentElement;
-      if (!details.open && parent?.classList.contains('acc-content')) {
-        parent
-          .querySelectorAll<HTMLDetailsElement>(
-            ':scope > details.acc-section[open]'
-          )
-          .forEach((sibling) => {
-            if (sibling === details) return;
-            measure(sibling);
-            sibling.open = false;
-          });
-      }
-
-      // ancestors that are already open should stay at `auto` so they can
-      // grow/shrink freely with nested toggles
-      for (let p = details.parentElement; p; p = p.parentElement) {
-        const ancestor = p.closest<HTMLDetailsElement>('details.acc-section');
-        if (!ancestor) break;
-        ancestor.style.removeProperty('--acc-content-size');
-      }
-    });
-
-    document.addEventListener('transitionend', (e) => {
-      if (
-        e.propertyName === 'block-size' &&
-        e.pseudoElement === '::details-content' &&
-        (e.target as HTMLElement).hasAttribute('open')
-      )
-        (e.target as HTMLElement).style.removeProperty('--acc-content-size');
-    });
     const cat = document.getElementById('cat');
     if (cat && Math.random() < 0.4) cat.textContent = ':3';
 

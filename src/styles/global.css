@@ -14,8 +14,6 @@ html {
   color: var(--text-color);
   font-weight: 600;
   background-color: var(--bg-1);
-  /* lets height transitions animate to/from `auto` (Chrome 129+) */
-  interpolate-size: allow-keywords;
 }
 
 /* Chakra's CSS reset: links inherit color, no underline */
@@ -192,31 +190,36 @@ details[open] > summary .acc-chevron {
   transform: rotate(180deg);
 }
 .acc-content {
+  /* grid item for the 0fr/1fr row trick; must carry no margin/padding so the
+     closed row collapses to true 0 (they'd otherwise contribute 24px) */
+  min-height: 0;
+}
+.acc-content-inner {
   margin: 4px;
   padding: 8px;
 }
 
-/* open/close animation (height + fade, like Chakra's Collapse);
-   browsers without ::details-content support just toggle instantly.
-   --acc-content-size is set from JS because `block-size: auto` itself
-   is only interpolable in browsers with interpolate-size support */
+/* open/close animation (height + fade, like Chakra's Collapse).
+   The 0fr -> 1fr grid-rows trick animates to the content's natural height
+   with no JS measurement, so nested accordions grow/shrink their ancestors
+   automatically. Works in Chromium, Firefox, and Safari; browsers without
+   ::details-content support just toggle instantly. */
 details.acc-section::details-content {
-  /* flow-root contains the child margins so they don't collapse out
-     and linger after the height transition */
-  display: flow-root;
   /* keep content rendered while clipped: overriding the UA's instant
-     content-visibility: hidden lets the close animation play, and keeps
-     heights measurable for nested accordions */
+     content-visibility: hidden lets the close animation play */
   content-visibility: visible;
-  block-size: 0;
+  /* grid (not flow-root) so the 0fr/1fr row trick applies; also prevents
+     child margins from collapsing out of the box */
+  display: grid;
+  grid-template-rows: 0fr;
   overflow: clip;
   opacity: 0;
   transition:
-    block-size var(--acc-duration) ease-in-out,
+    grid-template-rows var(--acc-duration) ease-in-out,
     opacity var(--acc-duration) ease-in-out;
 }
 details.acc-section[open]::details-content {
-  block-size: var(--acc-content-size, auto);
+  grid-template-rows: 1fr;
   opacity: 1;
 }
 
