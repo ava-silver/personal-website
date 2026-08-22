@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
   name: string;
-  icon: string;
+  icon: ImageMetadata | string;
   titleSize?: string;
   open?: boolean;
 }
@@ -13,7 +16,13 @@ const { name, icon, titleSize = '0.75em', open = false } = Astro.props;
   <summary>
     <span class="acc-header" style={`font-size: ${titleSize}`}>
       <span class="acc-icon-box">
-        <img src={icon} alt={`${name} Icon`} />
+        {
+          typeof icon === 'string' ? (
+            <img src={icon} alt={`${name} Icon`} loading="lazy" />
+          ) : (
+            <Image src={icon} alt={`${name} Icon`} loading="lazy" />
+          )
+        }
       </span>
       {name}
     </span>

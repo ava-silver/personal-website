@@ -5,11 +5,15 @@ import Section from '../components/Section.astro';
 import AccordionSection from '../components/AccordionSection.astro';
 import badges from '../assets/88x31s.json';
 
-import workSvg from '../assets/icons/work.svg?url';
-import smileSvg from '../assets/icons/smile-sticker.svg?url';
-import musicSvg from '../assets/icons/music.svg?url';
-import vinylSvg from '../assets/icons/vinyl.svg?url';
-import heartSvg from '../assets/icons/heart.svg?url';
+import workSvg from '../assets/icons/work.svg';
+import smileSvg from '../assets/icons/smile-sticker.svg';
+import musicSvg from '../assets/icons/music.svg';
+import vinylSvg from '../assets/icons/vinyl.svg';
+import heartSvg from '../assets/icons/heart.svg';
+import azureLogo from '../assets/logos/azure.png';
+import boseLogo from '../assets/logos/bose.png';
+import datadogLogo from '../assets/logos/datadog.png';
+import northeasternLogo from '../assets/logos/northeastern.webp';
 import resumeSvg from '../assets/icons/resume-content.svg?url';
 import githubContentSvg from '../assets/icons/github-content.svg?url';
 import linkedinSvg from '../assets/icons/linkedin-content.svg?url';
@@ -42,7 +46,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
     <Section>
       <div style="display: flex; flex-direction: column;">
         <AccordionSection name="work experience" icon={workSvg} titleSize="1em">
-          <AccordionSection name="Datadog" icon="/logos/datadog.png">
+          <AccordionSection name="Datadog" icon={datadogLogo}>
             I'm currently a Software Engineer II at
             <a href="https://www.datadoghq.com/" class="text-link">Datadog</a>,
             where I started as an intern in 2022 and 2023 during my time at
@@ -50,14 +54,14 @@ import blogSvg from '../assets/icons/blog.svg?url';
             Typescript/React, and Kubernetes, and work day-to-day on a large
             scale microservice architecture.
           </AccordionSection>
-          <AccordionSection name="Azure" icon="/logos/azure.png">
+          <AccordionSection name="Azure" icon={azureLogo}>
             I interned at<a href="https://azure.microsoft.com" class="text-link"
               >Microsoft Azure</a
             > in 2022 on the Software Load Balancer (SLB) Buildout team of Azure Core.
             Here I worked primarily with C# and helped develop internal tooling for
             core Azure infrastructure.
           </AccordionSection>
-          <AccordionSection name="Bose" icon="/logos/bose.png">
+          <AccordionSection name="Bose" icon={boseLogo}>
             I interned at <a href="https://www.bose.com/" class="text-link"
               >Bose</a
             > in 2021 on the Automotive Systems Division working on Android app development
@@ -67,7 +71,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
               class="text-link">Android Automotive</a
             >.
           </AccordionSection>
-          <AccordionSection name="Northeastern" icon="/logos/northeastern.webp">
+          <AccordionSection name="Northeastern" icon={northeasternLogo}>
             During my time at
             <a href="https://www.northeastern.edu/" class="text-link"
               >Northeastern Univeristy</a
@@ -155,6 +159,8 @@ import blogSvg from '../assets/icons/blog.svg?url';
                 alt={name}
                 height="31"
                 width="88"
+                loading="lazy"
+                decoding="async"
                 style="image-rendering: pixelated;"
               />
             </a>
@@ -173,7 +179,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
         class="clickable resource"
       >
         source code
-        <img src={githubContentSvg} alt="source code" />
+        <img src={githubContentSvg} alt="source code" loading="lazy" />
       </a>
     </div>
   </div>
