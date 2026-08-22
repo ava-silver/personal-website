@@ -1,0 +1,211 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import AccordionSection from '../components/AccordionSection.astro';
+import badges from '../assets/88x31s.json';
+
+import workSvg from '../assets/icons/work.svg?url';
+import smileSvg from '../assets/icons/smile-sticker.svg?url';
+import musicSvg from '../assets/icons/music.svg?url';
+import vinylSvg from '../assets/icons/vinyl.svg?url';
+import heartSvg from '../assets/icons/heart.svg?url';
+import resumeSvg from '../assets/icons/resume-content.svg?url';
+import githubContentSvg from '../assets/icons/github-content.svg?url';
+import linkedinSvg from '../assets/icons/linkedin-content.svg?url';
+import blogSvg from '../assets/icons/blog.svg?url';
+---
+
+<Base>
+  <div class="column">
+    <div style="padding-block: 1rem">
+      <Section>
+        <div
+          style="display:flex; justify-content:center; align-items:center; gap:1rem;"
+        >
+          <img src="/logo.svg" alt="" style="height: 5rem;" />
+          <h1 style="font-size: 3rem; margin-block: 0;">
+            ava <span class="full-name">silver</span>
+          </h1>
+        </div>
+      </Section>
+    </div>
+
+    <Section>
+      <h2 style="font-size: 2rem;">hiya there!</h2>
+      <p style="font-size: 1.25rem; margin-block: 0;">
+        i'm ava silver (<span class="pronouns">she/her</span>). welcome to my
+        corner of the internet! <span id="cat"></span>
+      </p>
+    </Section>
+
+    <Section>
+      <div style="display: flex; flex-direction: column;">
+        <AccordionSection name="work experience" icon={workSvg} titleSize="1em">
+          <AccordionSection name="Datadog" icon="/logos/datadog.png">
+            I'm currently a Software Engineer II at
+            <a href="https://www.datadoghq.com/" class="text-link">Datadog</a>,
+            where I started as an intern in 2022 and 2023 during my time at
+            Northeastern University. I work full-stack using Python, Go,
+            Typescript/React, and Kubernetes, and work day-to-day on a large
+            scale microservice architecture.
+          </AccordionSection>
+          <AccordionSection name="Azure" icon="/logos/azure.png">
+            I interned at<a href="https://azure.microsoft.com" class="text-link"
+              >Microsoft Azure</a
+            > in 2022 on the Software Load Balancer (SLB) Buildout team of Azure Core.
+            Here I worked primarily with C# and helped develop internal tooling for
+            core Azure infrastructure.
+          </AccordionSection>
+          <AccordionSection name="Bose" icon="/logos/bose.png">
+            I interned at <a href="https://www.bose.com/" class="text-link"
+              >Bose</a
+            > in 2021 on the Automotive Systems Division working on Android app development
+            and OS extensions for
+            <a
+              href="https://source.android.com/devices/automotive/start/what_automotive"
+              class="text-link">Android Automotive</a
+            >.
+          </AccordionSection>
+          <AccordionSection name="Northeastern" icon="/logos/northeastern.webp">
+            During my time at
+            <a href="https://www.northeastern.edu/" class="text-link"
+              >Northeastern Univeristy</a
+            > studing computer science, I was a Teaching Assistant for Algorithms
+            & Data Structures, and Fundamentals of Computer Science 1 Accelerated
+            (where I also worked a second semester as a Head TA).
+          </AccordionSection>
+        </AccordionSection>
+
+        <div style="padding: 4px;"></div>
+
+        <AccordionSection name="hobbies & fun" icon={smileSvg} titleSize="1em">
+          <AccordionSection name="playing music" icon={musicSvg}>
+            I can sing, as well as play the piano, trombone, and a bit of
+            guitar. I love to play music and sing along with friends -- it's
+            something that always brings me joy. I usually end up playing
+            whatever I've been listening to in the moment, whether it be
+            electronic music, pop, hip hop, or even classic rock.
+          </AccordionSection>
+          <AccordionSection name="celeste" icon="/logos/celeste.ico">
+            I love playing the game
+            <a href="https://www.celestegame.com/" class="text-link">celeste</a
+            >, particularly speedrunning the game. My current any% (the category
+            I usually play) PB is 45 mins and 17.18 seconds. While I played it
+            the most from 2022-2023, these days I still hop on to get in a few
+            runs every now and then!
+          </AccordionSection>
+          <AccordionSection name="vinyl" icon={vinylSvg}>
+            I've started collecting records, as I finally got a record player
+            when I moved to somerville, MA, with my girlfriend
+            <a href="https://breq.dev/" class="text-link brooke-link">Brooke</a
+            >. I really enjoy owning my favorite albums in a physical medium,
+            and having a more intentional listening experience, especially since
+            my preferred way to listen to music is to sit down and listen to an
+            album front to back.
+          </AccordionSection>
+          <AccordionSection name="friends & loved ones" icon={heartSvg}>
+            I love spending time with my friends and girlfriends (
+            <a href="https://breq.dev/" class="text-link brooke-link">Brooke</a>
+            and <a href="https://miakizz.quest/" class="text-link">Mia</a>),
+            whether it be watching good shows, playing games, or just talking. I
+            really appreciate a good deep conversation, and I always love to
+            learn more about the people I care about.<br /><br />
+            Make sure to check out my friends' websites via the 88x31 buttons at the
+            end of the page!
+          </AccordionSection>
+        </AccordionSection>
+      </div>
+    </Section>
+
+    <Section>
+      <div style="display: flex; justify-content: space-around;">
+        <a href="/resume.pdf" class="clickable resource">
+          Resume
+          <img src={resumeSvg} alt="Resume" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ava-silver/"
+          class="clickable resource"
+        >
+          LinkedIn
+          <img src={linkedinSvg} alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/ava-silver" class="clickable resource">
+          Github
+          <img src={githubContentSvg} alt="Github" />
+        </a>
+        <a href="/blog" class="clickable resource">
+          Blog
+          <img src={blogSvg} alt="Blog" />
+        </a>
+      </div>
+    </Section>
+
+    <Section>
+      <div
+        style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center;"
+      >
+        {
+          badges.map(({ name, image, url, ...rest }) => (
+            <a href={url} data-neko="true">
+              <img
+                src={'/badges/' + image}
+                data-alt-badge={'alt' in rest ? rest.alt : undefined}
+                alt={name}
+                height="31"
+                width="88"
+                style="image-rendering: pixelated;"
+              />
+            </a>
+          ))
+        }
+      </div>
+    </Section>
+
+    <div
+      style="display: flex; justify-content: center; gap: 2rem; align-items: center;"
+    >
+      <span>Ava Silver {new Date().getFullYear()}</span>
+      <a href="mailto:ava@avasilver.dev" class="clickable">ava@avasilver.dev</a>
+      <a
+        href="https://github.com/ava-silver/personal-website/"
+        class="clickable resource"
+      >
+        source code
+        <img src={githubContentSvg} alt="source code" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    import { WebHaptics } from 'web-haptics';
+
+    const haptics = new WebHaptics();
+    document.addEventListener('click', (e) => {
+      const summary = (e.target as Element).closest('summary');
+      if (!summary) return;
+      haptics.trigger('selection');
+
+      // measure the accordion's content right before it opens so block-size can
+      // transition without interpolate-size support (--acc-content-size);
+      // doing it at click time keeps nested-in-closed-parents measuring correct
+      const details = summary.closest<HTMLDetailsElement>('details.acc-section');
+      const content = details?.querySelector<HTMLElement>(':scope > .acc-content');
+      if (details && !details.open && content)
+        details.style.setProperty('--acc-content-size', `${content.offsetHeight}px`);
+    });
+
+    const cat = document.getElementById('cat');
+    if (cat && Math.random() < 0.4) cat.textContent = ':3';
+
+    // ~10% of visitors get the alt 88x31 badges
+    if (Math.random() < 0.1) {
+      document
+        .querySelectorAll<HTMLImageElement>('img[data-alt-badge]')
+        .forEach((img) => {
+          img.src = '/badges/' + img.dataset.altBadge;
+        });
+    }
+  </script>
+</Base>

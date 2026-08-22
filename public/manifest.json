@@ -1,13 +1,7 @@
 {
   "short_name": "Ava Silver",
   "name": "Ava Silver Personal Website",
-  "icons": [
-    {
-      "src": "a.png",
-      "type": "image/png",
-      "sizes": "256x256"
-    }
-  ],
+  "icons": [],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

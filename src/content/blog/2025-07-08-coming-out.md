@@ -1,3 +1,8 @@
+---
+title: "Coming Out"
+description: "A reflection on what it means to come out"
+date: 2025-07-08
+---
 # Coming Out
 Date: 2025-07-08
 

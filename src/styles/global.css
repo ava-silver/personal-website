@@ -1,0 +1,271 @@
+/* Theme tokens ported from the Chakra system in src/App.tsx */
+:root {
+  --acc-duration: 0.4s;
+  --bg-1: #17002a;
+  --bg-2: #2a004d;
+  --text-color: #efddff;
+  --brooke-pink: #ff8ac4;
+  --link-cyan: #00b5d8;
+  --md-link-blue: #349eeb;
+  --font-body: 'Comfortaa', system-ui, sans-serif;
+}
+
+html {
+  color: var(--text-color);
+  font-weight: 600;
+  background-color: var(--bg-1);
+  /* lets height transitions animate to/from `auto` (Chrome 129+) */
+  interpolate-size: allow-keywords;
+}
+
+/* Chakra's CSS reset: links inherit color, no underline */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  margin-block: 0.5rem;
+}
+
+/* globalCss rules from the old Chakra system */
+.pronouns {
+  background: linear-gradient(
+      90deg,
+      #efddff 0%,
+      #efddff 49.9%,
+      #55cdfc 50%,
+      #55cdfc 56%,
+      #f7a8b8 61%,
+      #f7a8b8 67.5%,
+      #ffffff 72.5%,
+      #ffffff 77.5%,
+      #f7a8b8 82.5%,
+      #f7a8b8 88.5%,
+      #55cdfc 93.5%,
+      #55cdfc 100%
+    );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  transition: background-position 1s ease-in-out;
+}
+.pronouns:hover {
+  background-position: 100%;
+}
+
+.clickable {
+  padding: 5px;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.4s ease-in-out;
+  border-radius: 0;
+}
+.clickable:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* replaces the useMediaQuery-driven "ava silver" heading on mobile */
+.full-name {
+  display: none;
+}
+@media (min-width: 769px) {
+  .full-name {
+    display: inline;
+  }
+}
+
+/* Layout primitives */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 12px;
+}
+@media (min-width: 30em) {
+  .column {
+    margin: 32px;
+  }
+}
+
+.section-card {
+  background-color: var(--bg-2);
+  color: var(--text-color);
+  width: 100%;
+  border-radius: 0.75rem;
+  border: none;
+  box-sizing: border-box;
+  min-height: 5rem;
+  padding: 1.5rem;
+}
+@media (min-width: 30em) {
+  .section-card {
+    width: 90%;
+  }
+}
+@media (min-width: 48em) {
+  .section-card {
+    width: 40rem;
+  }
+}
+
+.resource {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.back-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.text-link {
+  color: var(--link-cyan);
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+.brooke-link {
+  color: var(--brooke-pink);
+}
+.brooke-link:hover {
+  text-decoration: underline;
+}
+
+/* Accordions (native details/summary) */
+details.acc-section {
+  margin: 4px;
+}
+details.acc-section > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+details.acc-section > summary::-webkit-details-marker {
+  display: none;
+}
+.acc-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  line-height: 1;
+  font-size: 0.75em;
+  flex: 1;
+  text-align: start;
+  width: 100%;
+}
+.acc-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  min-height: 45px;
+  border-radius: 5px;
+  background-color: white;
+}
+.acc-icon-box img {
+  max-width: 40px;
+  max-height: 40px;
+}
+.acc-chevron {
+  margin-left: auto;
+  transition: transform 0.2s ease-in-out;
+}
+details[open] > summary .acc-chevron {
+  transform: rotate(180deg);
+}
+.acc-content {
+  margin: 4px;
+  padding: 8px;
+}
+
+/* open/close animation (height + fade, like Chakra's Collapse);
+   browsers without ::details-content support just toggle instantly.
+   --acc-content-size is set from JS because `block-size: auto` itself
+   is only interpolable in browsers with interpolate-size support */
+details.acc-section::details-content {
+  /* flow-root contains the child margins so they don't collapse out
+     and linger after the height transition */
+  display: flow-root;
+  /* keep content rendered while clipped: overriding the UA's instant
+     content-visibility: hidden lets the close animation play, and keeps
+     heights measurable for nested accordions */
+  content-visibility: visible;
+  block-size: 0;
+  overflow: clip;
+  opacity: 0;
+  transition:
+    block-size var(--acc-duration) ease-in-out,
+    opacity var(--acc-duration) ease-in-out;
+}
+details.acc-section[open]::details-content {
+  block-size: var(--acc-content-size, auto);
+  opacity: 1;
+}
+
+/* Blog post prose (ported from src/Blog/renderer.tsx) */
+.prose p {
+  margin: 0 0 8px;
+}
+.prose h1 {
+  margin: 16px 0;
+  font-size: 2.5rem;
+}
+.prose h2 {
+  margin: 16px 0;
+  font-size: 1.5rem;
+}
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  margin: 16px 0;
+  font-size: 1rem;
+}
+.prose a {
+  color: var(--md-link-blue);
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 8px;
+  padding-left: 16px;
+}
+.prose li {
+  margin-bottom: 8px;
+}
+.prose blockquote {
+  margin: 0 0 4px;
+  padding-left: 1rem;
+  border-left: 4px solid var(--bg-1);
+}
+.prose code {
+  white-space: break-spaces;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+.prose pre {
+  margin: 0 0 8px;
+}
+.prose img {
+  max-width: 100%;
+}

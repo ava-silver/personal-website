@@ -1,3 +1,8 @@
+---
+title: "To Be a Mother"
+description: "A piece about motherhood, dedicated to my mother Susan"
+date: 2025-10-04
+---
 # To Be a Mother
 Date: 2025-10-04
 

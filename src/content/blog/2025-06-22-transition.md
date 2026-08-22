@@ -1,3 +1,8 @@
+---
+title: "Transition: A Retrospective"
+description: "A retrospective of the last 5 years of my transition"
+date: 2025-06-22
+---
 
 # Transition: A Retrospective
 Date: 2025-06-22
