@@ -1,0 +1,5 @@
+dist
+public
+.astro
+bun.lock
+**/*.md

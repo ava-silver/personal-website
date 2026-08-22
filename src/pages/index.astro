@@ -196,10 +196,17 @@ import blogSvg from '../assets/icons/blog.svg?url';
       // measure the accordion's content right before it opens so block-size can
       // transition without interpolate-size support (--acc-content-size);
       // doing it at click time keeps nested-in-closed-parents measuring correct
-      const details = summary.closest<HTMLDetailsElement>('details.acc-section');
-      const content = details?.querySelector<HTMLElement>(':scope > .acc-content');
+      const details = summary.closest<HTMLDetailsElement>(
+        'details.acc-section'
+      );
+      const content = details?.querySelector<HTMLElement>(
+        ':scope > .acc-content'
+      );
       if (details && !details.open && content)
-        details.style.setProperty('--acc-content-size', `${content.offsetHeight}px`);
+        details.style.setProperty(
+          '--acc-content-size',
+          `${content.offsetHeight}px`
+        );
     });
 
     const cat = document.getElementById('cat');

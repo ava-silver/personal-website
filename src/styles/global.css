@@ -38,20 +38,20 @@ h3 {
 /* globalCss rules from the old Chakra system */
 .pronouns {
   background: linear-gradient(
-      90deg,
-      #efddff 0%,
-      #efddff 49.9%,
-      #55cdfc 50%,
-      #55cdfc 56%,
-      #f7a8b8 61%,
-      #f7a8b8 67.5%,
-      #ffffff 72.5%,
-      #ffffff 77.5%,
-      #f7a8b8 82.5%,
-      #f7a8b8 88.5%,
-      #55cdfc 93.5%,
-      #55cdfc 100%
-    );
+    90deg,
+    #efddff 0%,
+    #efddff 49.9%,
+    #55cdfc 50%,
+    #55cdfc 56%,
+    #f7a8b8 61%,
+    #f7a8b8 67.5%,
+    #ffffff 72.5%,
+    #ffffff 77.5%,
+    #f7a8b8 82.5%,
+    #f7a8b8 88.5%,
+    #55cdfc 93.5%,
+    #55cdfc 100%
+  );
   background-clip: text;
   -webkit-text-fill-color: transparent;
   background-repeat: no-repeat;

@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: oxlint
+        name: oxlint
+        entry: bun run lint
+        language: system
+        pass_filenames: false
+      - id: prettier
+        name: prettier
+        entry: bun run format:check
+        language: system
+        pass_filenames: false

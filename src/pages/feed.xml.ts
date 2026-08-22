@@ -4,7 +4,7 @@ import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
   const posts = (await getCollection('blog')).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
   );
   return rss({
     title: 'Ava Silver',

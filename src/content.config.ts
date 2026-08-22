@@ -7,9 +7,7 @@ const blog = defineCollection({
     base: './src/content/blog',
     // strip the YYYY-MM-DD- prefix and .md extension for URLs like /blog/coming-out
     generateId: ({ entry }) =>
-      entry
-        .replace(/^\d{4}-\d{2}-\d{2}-/, '')
-        .replace(/\.md$/, ''),
+      entry.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, ''),
     schema: z.object({
       title: z.string(),
       description: z.string(),

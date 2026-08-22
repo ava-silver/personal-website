@@ -8,11 +8,19 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "lint": "oxlint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.14",
-    "astro": "^5.16.4",
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^7.2.4",
     "web-haptics": "^0.0.6"
+  },
+  "devDependencies": {
+    "oxlint": "^1.79.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
