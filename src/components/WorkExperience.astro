@@ -1,0 +1,43 @@
+---
+import AccordionSection from './AccordionSection.astro';
+
+import workSvg from '../assets/icons/work.svg';
+import azureLogo from '../assets/logos/azure.png';
+import boseLogo from '../assets/logos/bose.png';
+import datadogLogo from '../assets/logos/datadog.png';
+import northeasternLogo from '../assets/logos/northeastern.webp';
+---
+
+<AccordionSection name="work experience" icon={workSvg}>
+  <AccordionSection name="Datadog" icon={datadogLogo} group="work">
+    I'm currently a Software Engineer II at <a
+      href="https://www.datadoghq.com/"
+      class="text-link">Datadog</a
+    >, where I started as an intern in 2022 and 2023 during my time at
+    Northeastern University. I work full-stack using Python, Go,
+    Typescript/React, and Kubernetes, and work day-to-day on a large scale
+    microservice architecture.
+  </AccordionSection>
+  <AccordionSection name="Azure" icon={azureLogo} group="work">
+    I interned at <a href="https://azure.microsoft.com" class="text-link"
+      >Microsoft Azure</a
+    > in 2022 on the Software Load Balancer (SLB) Buildout team of Azure Core. Here
+    I worked primarily with C# and helped develop internal tooling for core Azure
+    infrastructure.
+  </AccordionSection>
+  <AccordionSection name="Bose" icon={boseLogo} group="work">
+    I interned at <a href="https://www.bose.com/" class="text-link">Bose</a> in 2021
+    on the Automotive Systems Division working on Android app development and OS extensions
+    for <a
+      href="https://source.android.com/devices/automotive/start/what_automotive"
+      class="text-link">Android Automotive</a
+    >.
+  </AccordionSection>
+  <AccordionSection name="Northeastern" icon={northeasternLogo} group="work">
+    During my time at <a href="https://www.northeastern.edu/" class="text-link"
+      >Northeastern Univeristy</a
+    > studing computer science, I was a Teaching Assistant for Algorithms & Data Structures,
+    and Fundamentals of Computer Science 1 Accelerated (where I also worked a second
+    semester as a Head TA).
+  </AccordionSection>
+</AccordionSection>

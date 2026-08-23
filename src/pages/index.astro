@@ -1,23 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
-import AccordionSection from '../components/AccordionSection.astro';
+import WorkExperience from '../components/WorkExperience.astro';
+import Hobbies from '../components/Hobbies.astro';
 import badges from '../assets/88x31s.json';
 
-import workSvg from '../assets/icons/work.svg';
-import smileSvg from '../assets/icons/smile-sticker.svg';
-import musicSvg from '../assets/icons/music.svg';
-import vinylSvg from '../assets/icons/vinyl.svg';
-import heartSvg from '../assets/icons/heart.svg';
-import azureLogo from '../assets/logos/azure.png';
-import boseLogo from '../assets/logos/bose.png';
-import datadogLogo from '../assets/logos/datadog.png';
-import northeasternLogo from '../assets/logos/northeastern.webp';
-import resumeSvg from '../assets/icons/resume-content.svg?url';
-import githubContentSvg from '../assets/icons/github-content.svg?url';
-import linkedinSvg from '../assets/icons/linkedin-content.svg?url';
-import blogSvg from '../assets/icons/blog.svg?url';
+import resumeSvg from '../assets/icons/resume.svg';
+import githubSvg from '../assets/icons/github.svg';
+import linkedinSvg from '../assets/icons/linkedin.svg';
+import blogSvg from '../assets/icons/blog.svg';
 ---
 
 <Base>
@@ -45,100 +38,11 @@ import blogSvg from '../assets/icons/blog.svg?url';
 
     <Section>
       <div style="display: flex; flex-direction: column;">
-        <AccordionSection name="work experience" icon={workSvg}>
-          <AccordionSection name="Datadog" icon={datadogLogo} group="work">
-            I'm currently a Software Engineer II at <a
-              href="https://www.datadoghq.com/"
-              class="text-link">Datadog</a
-            >, where I started as an intern in 2022 and 2023 during my time at
-            Northeastern University. I work full-stack using Python, Go,
-            Typescript/React, and Kubernetes, and work day-to-day on a large
-            scale microservice architecture.
-          </AccordionSection>
-          <AccordionSection name="Azure" icon={azureLogo} group="work">
-            I interned at <a
-              href="https://azure.microsoft.com"
-              class="text-link">Microsoft Azure</a
-            > in 2022 on the Software Load Balancer (SLB) Buildout team of Azure Core.
-            Here I worked primarily with C# and helped develop internal tooling for
-            core Azure infrastructure.
-          </AccordionSection>
-          <AccordionSection name="Bose" icon={boseLogo} group="work">
-            I interned at <a href="https://www.bose.com/" class="text-link"
-              >Bose</a
-            > in 2021 on the Automotive Systems Division working on Android app development
-            and OS extensions for <a
-              href="https://source.android.com/devices/automotive/start/what_automotive"
-              class="text-link">Android Automotive</a
-            >.
-          </AccordionSection>
-          <AccordionSection
-            name="Northeastern"
-            icon={northeasternLogo}
-            group="work"
-          >
-            During my time at <a
-              href="https://www.northeastern.edu/"
-              class="text-link">Northeastern Univeristy</a
-            > studing computer science, I was a Teaching Assistant for Algorithms
-            & Data Structures, and Fundamentals of Computer Science 1 Accelerated
-            (where I also worked a second semester as a Head TA).
-          </AccordionSection>
-        </AccordionSection>
+        <WorkExperience />
 
         <div style="padding: 4px;"></div>
 
-        <AccordionSection name="hobbies & fun" icon={smileSvg}>
-          <AccordionSection
-            name="playing music"
-            icon={musicSvg}
-            group="hobbies"
-          >
-            I can sing, as well as play the piano, trombone, and a bit of
-            guitar. I love to play music and sing along with friends -- it's
-            something that always brings me joy. I usually end up playing
-            whatever I've been listening to in the moment, whether it be
-            electronic music, pop, hip hop, or even classic rock.
-          </AccordionSection>
-          <AccordionSection
-            name="celeste"
-            icon="/logos/celeste.ico"
-            group="hobbies"
-          >
-            I love playing the game <a
-              href="https://www.celestegame.com/"
-              class="text-link">celeste</a
-            >, particularly speedrunning the game. My current any% (the category
-            I usually play) PB is 45 mins and 17.18 seconds. While I played it
-            the most from 2022-2023, these days I still hop on to get in a few
-            runs every now and then!
-          </AccordionSection>
-          <AccordionSection name="vinyl" icon={vinylSvg} group="hobbies">
-            I've started collecting records, as I finally got a record player
-            when I moved to somerville, MA, with my girlfriend <a
-              href="https://breq.dev/"
-              class="text-link brooke-link">Brooke</a
-            >. I really enjoy owning my favorite albums in a physical medium,
-            and having a more intentional listening experience, especially since
-            my preferred way to listen to music is to sit down and listen to an
-            album front to back.
-          </AccordionSection>
-          <AccordionSection
-            name="friends & loved ones"
-            icon={heartSvg}
-            group="hobbies"
-          >
-            I love spending time with my friends and girlfriends (<a
-              href="https://breq.dev/"
-              class="text-link brooke-link">Brooke</a
-            > and <a href="https://miakizz.quest/" class="text-link">Mia</a>),
-            whether it be watching good shows, playing games, or just talking. I
-            really appreciate a good deep conversation, and I always love to
-            learn more about the people I care about.<br /><br />
-            Make sure to check out my friends' websites via the 88x31 buttons at the
-            end of the page!
-          </AccordionSection>
-        </AccordionSection>
+        <Hobbies />
       </div>
     </Section>
 
@@ -146,22 +50,22 @@ import blogSvg from '../assets/icons/blog.svg?url';
       <div style="display: flex; justify-content: space-around;">
         <a href="/resume.pdf" class="clickable resource">
           Resume
-          <img src={resumeSvg} alt="Resume" />
+          <Image src={resumeSvg} alt="Resume" />
         </a>
         <a
           href="https://www.linkedin.com/in/ava-silver/"
           class="clickable resource"
         >
           LinkedIn
-          <img src={linkedinSvg} alt="LinkedIn" />
+          <Image src={linkedinSvg} alt="LinkedIn" />
         </a>
         <a href="https://github.com/ava-silver" class="clickable resource">
           Github
-          <img src={githubContentSvg} alt="Github" />
+          <Image src={githubSvg} alt="Github" />
         </a>
         <a href="/blog" class="clickable resource">
           Blog
-          <img src={blogSvg} alt="Blog" />
+          <Image src={blogSvg} alt="Blog" />
         </a>
       </div>
     </Section>
@@ -199,7 +103,7 @@ import blogSvg from '../assets/icons/blog.svg?url';
         class="clickable resource"
       >
         source code
-        <img src={githubContentSvg} alt="source code" loading="lazy" />
+        <Image src={githubSvg} alt="source code" loading="lazy" />
       </a>
     </div>
   </div>
